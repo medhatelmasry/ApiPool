@@ -87,7 +87,7 @@ namespace ApiPool.Controllers.Species
             }
             catch (DbUpdateException)
             {
-                if (SpecieExists(specie.SpecieName))
+                if (SpecieExists(specie.SpecieName!))
                 {
                     return Conflict();
                 }

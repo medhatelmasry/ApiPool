@@ -87,7 +87,7 @@ namespace ApiPool.Controllers.Countries
             }
             catch (DbUpdateException)
             {
-                if (CityExists(city.CityName))
+                if (CityExists(city.CityName!))
                 {
                     return Conflict();
                 }

@@ -87,7 +87,7 @@ namespace ApiPool.Controllers.Vehicles
             }
             catch (DbUpdateException)
             {
-                if (VehicleExists(vehicle.Model))
+                if (VehicleExists(vehicle.Model!))
                 {
                     return Conflict();
                 }

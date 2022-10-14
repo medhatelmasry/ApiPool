@@ -6,10 +6,10 @@ namespace ApiPool.Models.Students
     {
         public int StudentId { get; set; }
         [Required]
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
         [Required]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
         [Required]
-        public string School { get; set; }
+        public string? School { get; set; }
     }
 }

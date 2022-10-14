@@ -87,7 +87,7 @@ namespace ApiPool.Controllers.Courses
             }
             catch (DbUpdateException)
             {
-                if (CourseExists(course.CourseId))
+                if (CourseExists(course.CourseId!))
                 {
                     return Conflict();
                 }

@@ -9,10 +9,10 @@ namespace ApiPool.Models.Foods
         public int FoodId { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
-        public string Unit { get; set; }
+        public string? Unit { get; set; }
         
         [Required]
         public float UnitPrice { get; set; }
@@ -20,7 +20,7 @@ namespace ApiPool.Models.Foods
         public int FoodCategoryId { get; set; }
 
         [ForeignKey("FoodCategoryId")]
-        public FoodCategory FoodCategory { get; set; }
+        public FoodCategory? FoodCategory { get; set; }
 
     }
 }

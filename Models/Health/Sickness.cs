@@ -10,14 +10,14 @@ namespace ApiPool.Models.Health
         public int SicknessId { get; set; }
 
         [Required]
-        public string SicknessName { get; set; }
+        public string? SicknessName { get; set; }
 
         [Required]
         public int PatientId { get; set; }
 
         [ForeignKey("PatientId")]
-        public Patient Patient { get; set; }
+        public Patient? Patient { get; set; }
 
-        public List<Medicine> Medicines { get; set; }
+        public List<Medicine>? Medicines { get; set; }
     }
 }

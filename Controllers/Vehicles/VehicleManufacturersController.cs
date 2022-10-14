@@ -87,7 +87,7 @@ namespace ApiPool.Controllers.Vehicles
             }
             catch (DbUpdateException)
             {
-                if (VehicleManufacturerExists(vehicleManufacturer.VehicleManufacturerName))
+                if (VehicleManufacturerExists(vehicleManufacturer.VehicleManufacturerName!))
                 {
                     return Conflict();
                 }

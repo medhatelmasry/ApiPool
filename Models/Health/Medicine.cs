@@ -9,10 +9,10 @@ namespace ApiPool.Models.Health
         public int MedicineId { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
-        public string DosageUnit { get; set; }
+        public string? DosageUnit { get; set; }
 
         [Required]
         public int Dosage { get; set; }
@@ -24,6 +24,6 @@ namespace ApiPool.Models.Health
         public int SicknessId { get; set; }
 
         [ForeignKey("SicknessId")]
-        public Sickness Sickness { get; set; }
+        public Sickness? Sickness { get; set; }
     }
 }

@@ -54,7 +54,7 @@ namespace ApiPool.Models.Utils
             foreach (var p in pictures)
             {
                 //if (p.Url.Trim() == pictureUrl.Trim())
-                if (string.Equals(p.Url.Trim(), pictureUrl.Trim(), StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(p.Url!.Trim(), pictureUrl.Trim(), StringComparison.OrdinalIgnoreCase))
                 {
                     isOk = true;
                     break;
@@ -67,7 +67,7 @@ namespace ApiPool.Models.Utils
         public static string GetFileNameFromUrl(string url)
         {
             Uri uri;
-            if (!Uri.TryCreate(url, UriKind.Absolute, out uri))
+            if (!Uri.TryCreate(url, UriKind.Absolute, out uri!))
                 uri = new Uri(url);
 
             return Path.GetFileName(uri.LocalPath);

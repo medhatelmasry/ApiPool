@@ -9,15 +9,15 @@ namespace ApiPool.Models.Movies
         public int ActorId { get; set; }
 
         [Required]
-        public string FirstName { get; set; }
+        public string? FirstName { get; set; }
 
         [Required]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
 
         [Required]
         public int MovieId { get; set; }
 
         [ForeignKey("MovieId")] 
-        public Movie Movie { get; set; }
+        public Movie? Movie { get; set; }
     }
 }

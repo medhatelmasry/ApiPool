@@ -8,7 +8,7 @@ namespace ApiPool.Models.Athletics
         public int CompetitionId { get; set; }
 
         [Required]
-        public string EventName { get; set; }
-        public List<Athlete> Athletes { get; set; }
+        public string? EventName { get; set; }
+        public List<Athlete>? Athletes { get; set; }
     }
 }

@@ -87,7 +87,7 @@ namespace ApiPool.Controllers.Countries
             }
             catch (DbUpdateException)
             {
-                if (ContinentExists(continent.ContinentName))
+                if (ContinentExists(continent.ContinentName!))
                 {
                     return Conflict();
                 }

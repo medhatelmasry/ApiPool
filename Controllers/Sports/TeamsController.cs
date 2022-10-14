@@ -87,7 +87,7 @@ namespace ApiPool.Controllers.Sports
             }
             catch (DbUpdateException)
             {
-                if (TeamExists(team.TeamName))
+                if (TeamExists(team.TeamName!))
                 {
                     return Conflict();
                 }

@@ -9,12 +9,12 @@ namespace ApiPool.Models.Species
         public int OrganismId { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
-        public string SpecieName { get; set; }
+        public string? SpecieName { get; set; }
 
         [ForeignKey("SpecieName")] 
-        public Specie Specie { get; set; }
+        public Specie? Specie { get; set; }
     }
 }

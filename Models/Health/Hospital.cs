@@ -8,26 +8,26 @@ namespace ApiPool.Models.Health
         public int HospitalId { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
-        public string Street { get; set; }
+        public string? Street { get; set; }
 
         [Required]
-        public string City { get; set; }
+        public string? City { get; set; }
 
         [Required]
-        public string Province { get; set; }
+        public string? Province { get; set; }
 
         [Required]
-        public string PostalCode { get; set; }
+        public string? PostalCode { get; set; }
 
         [Required]
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
-        public string Email { get; set; }
-        public string Phone { get; set; }
+        public string? Email { get; set; }
+        public string? Phone { get; set; }
 
-        public List<Patient> Patients { get; set; }
+        public List<Patient>? Patients { get; set; }
     }
 }

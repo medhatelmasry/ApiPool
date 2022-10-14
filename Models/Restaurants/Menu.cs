@@ -9,10 +9,10 @@ namespace ApiPool.Models.Restaurants
         public int MenuId { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
-        public string Size { get; set; }
+        public string? Size { get; set; }
 
         [Required]
         public double Price { get; set; }
@@ -20,6 +20,6 @@ namespace ApiPool.Models.Restaurants
         public int RestaurantId { get; set; }
 
         [ForeignKey("RestaurantId")]
-        public Restaurant Restaurant { get; set; }
+        public Restaurant? Restaurant { get; set; }
     }
 }

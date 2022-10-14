@@ -10,17 +10,17 @@ namespace ApiPool.Models.Countries
         public int ProvinceId { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required]
-        public string CapitalCity { get; set; }
+        public string? CapitalCity { get; set; }
 
         [Required]
-        public string CountryName { get; set; }
+        public string? CountryName { get; set; }
 
         [ForeignKey("CountryName")] 
-        public Country Country { get; set; }
+        public Country? Country { get; set; }
 
-        public List<City> Cities { get; set; }
+        public List<City>? Cities { get; set; }
     }
 }

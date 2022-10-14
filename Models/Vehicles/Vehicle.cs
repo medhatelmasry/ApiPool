@@ -6,18 +6,18 @@ namespace ApiPool.Models.Vehicles
     public class Vehicle
     {
         [Key]
-        public string Model { get; set; }
+        public string? Model { get; set; }
 
         [Required]
-        public string Fuel { get; set; }
+        public string? Fuel { get; set; }
 
         [Required]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         [Required]
-        public string VehicleManufacturerName { get; set; }
+        public string? VehicleManufacturerName { get; set; }
 
         [ForeignKey("VehicleManufacturerName")] 
-        public VehicleManufacturer VehicleManufacturer { get; set; }
+        public VehicleManufacturer? VehicleManufacturer { get; set; }
     }
 }

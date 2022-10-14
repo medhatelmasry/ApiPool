@@ -7,11 +7,11 @@ namespace ApiPool.Models.Vehicles
     public class VehicleManufacturer
     {
         [Key]
-        public string VehicleManufacturerName { get; set; }
+        public string? VehicleManufacturerName { get; set; }
 
         [Required]
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
-        public List<Vehicle> Vehicles { get; set; }
+        public List<Vehicle>? Vehicles { get; set; }
     }
 }
