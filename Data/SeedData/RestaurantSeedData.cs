@@ -18,7 +18,8 @@ namespace ApiPool.Data.Seed
                      Province = "British Columbia",
                      PostalCode = "V5G 1U8",
                      Country = "Canada",
-                     FoodType = "Western Food"
+                     FoodType = "Western Food",
+                     Phone="(604) 705-0704"
                  },
                  new Restaurant()
                  {
@@ -29,7 +30,8 @@ namespace ApiPool.Data.Seed
                      Province = "British Columbia",
                      PostalCode = "V6A 1C5",
                      Country = "Canada",
-                     FoodType = "Chinese Food"
+                     FoodType = "Chinese Food",
+                     Phone="(778) 298-0591"
                  },
                  new Restaurant()
                  {
@@ -40,7 +42,8 @@ namespace ApiPool.Data.Seed
                      Province = "British Columbia",
                      PostalCode = "V3B 8A4",
                      Country = "Canada",
-                     FoodType = "Western Food"
+                     FoodType = "Western Food",
+                     Phone="(604) 394-9339"
                  },
                  new Restaurant()
                  {
@@ -51,7 +54,8 @@ namespace ApiPool.Data.Seed
                      Province = "British Columbia",
                      PostalCode = "V2X 1X6",
                      Country = "Canada",
-                     FoodType = "Indian Food"
+                     FoodType = "Indian Food",
+                     Phone="(604) 764-5639"
                  },
                  new Restaurant()
                  {
@@ -62,8 +66,65 @@ namespace ApiPool.Data.Seed
                      Province = "British Columbia",
                      PostalCode = "V2X 2P9",
                      Country = "Canada",
-                     FoodType = "Greek Food"
+                     FoodType = "Greek Food",
+                     Phone="(604) 554-6639"
                  },
+                                 new Restaurant() {
+                    RestaurantId=6,
+                    RestaurantName="JOEY Burnaby",
+                    Street="109 - 1899 Rosser Ave",
+                    City="Burnaby",
+                    Province="BC",
+                    PostalCode="V5C 6R5",
+                    Country="Canada",
+                    FoodType="Western",
+                    Phone="(604) 564-5639"
+                },
+                new Restaurant() {
+                    RestaurantId=7,
+                    RestaurantName="Trattoria",
+                    Street="102 - 4501 Kingsway",
+                    City="Burnaby",
+                    Province="BC",
+                    PostalCode="V5H 2A9",
+                    Country="Canada",
+                    FoodType="Italian",
+                    Phone="(604) 424-8779"
+                },
+                new Restaurant() {
+                    RestaurantId=8,
+                    RestaurantName="Cactus Club Cafe",
+                    Street="4219 B Lougheed Hwy",
+                    City="Burnaby",
+                    Province="BC",
+                    PostalCode="V6C 0A8",
+                    Country="Canada",
+                    FoodType="Western",
+                    Phone="(604) 291-6606",
+                },
+                new Restaurant() {
+                    RestaurantId=9,
+                    RestaurantName="Personas Patio Restaurant And Lounge",
+                    Street="4331 Dominion St",
+                    City="Burnaby",
+                    Province="BC",
+                    PostalCode="V5G 1C7",
+                    Country="Canada",
+                    FoodType="Pub",
+                    Phone="(604) 453-0811"
+                },
+                new Restaurant() {
+                    RestaurantId=10,
+                    RestaurantName="Hart House Restaurant",
+                    Street="6664 Deer Lake Ave",
+                    City="Burnaby",
+                    Province="BC",
+                    PostalCode="V5E 4H3",
+                    Country="Canada",
+                    FoodType="NW plates",
+                    Phone="(604) 298-4278"
+                },                                                            
+
             };
 
             return restaurants;
@@ -77,14 +138,12 @@ namespace ApiPool.Data.Seed
                  {
                     MenuId = 1,
                     Name = "Oven Baked Lasagna",
-                    Size = "Regular",
                     Price = 17.99,
                     RestaurantId = 1
                  },
                  new Menu()
                  {
                     MenuId = 2,
-                    Size = "Regular",
                     Name = "Spaghetti & Meatballs",
                     Price = 17.99,
                     RestaurantId = 1
@@ -93,7 +152,6 @@ namespace ApiPool.Data.Seed
                  {
                     MenuId = 3,
                     Name = "Seafood Fettuccine",
-                    Size = "Regular",
                     Price = 19.99,
                     RestaurantId = 1
                  },
@@ -102,7 +160,6 @@ namespace ApiPool.Data.Seed
                     MenuId = 4,
                     Name = "Barbecued Duck",
                     Price = 25.50,
-                    Size = "Regular",
                     RestaurantId = 2
                  },
                  new Menu()
@@ -110,14 +167,12 @@ namespace ApiPool.Data.Seed
                     MenuId = 5,
                     Name = "Roasted Pork",
                     Price = 9.75,
-                    Size = "Regular",
                     RestaurantId = 2
                  },
                  new Menu()
                  {
                     MenuId = 6,
                     Name = "Royal Hawaiian",
-                    Size = "10 \" Small",
                     Price = 18.99,
                     RestaurantId = 3
                  },
@@ -126,7 +181,6 @@ namespace ApiPool.Data.Seed
                  {
                     MenuId = 7,
                     Name = "Royal Hawaiian",
-                    Size = "13 \" Medium",
                     Price = 27.99,
                     RestaurantId = 3
                  },
@@ -134,7 +188,6 @@ namespace ApiPool.Data.Seed
                  {
                     MenuId = 8,
                     Name = "Chicken Tikka",
-                    Size = "Regular",
                     Price = 4.99,
                     RestaurantId = 4
                  },
@@ -142,7 +195,6 @@ namespace ApiPool.Data.Seed
                  {
                     MenuId = 9,
                     Name = "Butter Chicken",
-                    Size = "Regular",
                     Price = 12.99,
                     RestaurantId = 4
                  },
@@ -150,10 +202,40 @@ namespace ApiPool.Data.Seed
                  {
                     MenuId = 10,
                     Name = "Lamb Souvlaki",
-                    Size = "Regular",
                     Price = 19.00,
                     RestaurantId = 5
                  },
+                                 new Menu() {
+                    MenuId = 11,
+                    Name = "Chili Chicken",
+                    Price = 15.75,
+                    RestaurantId = 6
+                },
+                new Menu() {
+                    MenuId = 12,
+                    Name = "Yam Fries",
+                    Price = 12.00,
+                    RestaurantId = 6
+                },    
+                new Menu() {
+                    MenuId = 13,
+                    Name = "Sushi Cone",
+                    Price = 6.25,
+                    RestaurantId = 6
+                },
+                new Menu() {
+                    MenuId = 14,
+                    Name = "Casar Salad",
+                    Price = 13,
+                    RestaurantId = 7
+                },  
+                new Menu() {
+                    MenuId = 15,
+                    Name = "Linguine Carbonara",
+                    Price = 22,
+                    RestaurantId = 7
+                },                
+
             };
 
             return menuitems;

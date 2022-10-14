@@ -30,3 +30,7 @@ dotnet aspnet-codegenerator controller -name TeamsController -async -api -m Team
 dotnet aspnet-codegenerator controller -name PlayersController -async -api -m Player -dc ApiPoolContext -outDir Controllers
 
 dotnet aspnet-codegenerator controller -name StudentsController -async -api -m Student -dc ApiPoolContext -outDir Controllers
+
+dotnet aspnet-codegenerator controller -name RestaurantsController -async -api -m Restaurant -dc ApiPoolContext -outDir Controllers
+dotnet aspnet-codegenerator controller -name MenusController -async -api -m Menu -dc ApiPoolContext -outDir Controllers
+

@@ -29,6 +29,9 @@ namespace ApiPool.Models.Restaurants
         [Required]
         public string? FoodType { get; set; }
 
+        [Required]
+        public string? Phone { get; set; }
+
         public List<Menu>? MenuItems { get; set; }
     }
 }

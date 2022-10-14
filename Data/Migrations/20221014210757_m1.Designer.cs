@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiPool.Data.Migrations
 {
     [DbContext(typeof(ApiPoolContext))]
-    [Migration("20221014050142_m1")]
+    [Migration("20221014210757_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1162,10 +1162,6 @@ namespace ApiPool.Data.Migrations
                     b.Property<int>("RestaurantId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Size")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("MenuId");
 
                     b.HasIndex("RestaurantId");
@@ -1178,80 +1174,105 @@ namespace ApiPool.Data.Migrations
                             MenuId = 1,
                             Name = "Oven Baked Lasagna",
                             Price = 17.989999999999998,
-                            RestaurantId = 1,
-                            Size = "Regular"
+                            RestaurantId = 1
                         },
                         new
                         {
                             MenuId = 2,
                             Name = "Spaghetti & Meatballs",
                             Price = 17.989999999999998,
-                            RestaurantId = 1,
-                            Size = "Regular"
+                            RestaurantId = 1
                         },
                         new
                         {
                             MenuId = 3,
                             Name = "Seafood Fettuccine",
                             Price = 19.989999999999998,
-                            RestaurantId = 1,
-                            Size = "Regular"
+                            RestaurantId = 1
                         },
                         new
                         {
                             MenuId = 4,
                             Name = "Barbecued Duck",
                             Price = 25.5,
-                            RestaurantId = 2,
-                            Size = "Regular"
+                            RestaurantId = 2
                         },
                         new
                         {
                             MenuId = 5,
                             Name = "Roasted Pork",
                             Price = 9.75,
-                            RestaurantId = 2,
-                            Size = "Regular"
+                            RestaurantId = 2
                         },
                         new
                         {
                             MenuId = 6,
                             Name = "Royal Hawaiian",
                             Price = 18.989999999999998,
-                            RestaurantId = 3,
-                            Size = "10 \" Small"
+                            RestaurantId = 3
                         },
                         new
                         {
                             MenuId = 7,
                             Name = "Royal Hawaiian",
                             Price = 27.989999999999998,
-                            RestaurantId = 3,
-                            Size = "13 \" Medium"
+                            RestaurantId = 3
                         },
                         new
                         {
                             MenuId = 8,
                             Name = "Chicken Tikka",
                             Price = 4.9900000000000002,
-                            RestaurantId = 4,
-                            Size = "Regular"
+                            RestaurantId = 4
                         },
                         new
                         {
                             MenuId = 9,
                             Name = "Butter Chicken",
                             Price = 12.99,
-                            RestaurantId = 4,
-                            Size = "Regular"
+                            RestaurantId = 4
                         },
                         new
                         {
                             MenuId = 10,
                             Name = "Lamb Souvlaki",
                             Price = 19.0,
-                            RestaurantId = 5,
-                            Size = "Regular"
+                            RestaurantId = 5
+                        },
+                        new
+                        {
+                            MenuId = 11,
+                            Name = "Chili Chicken",
+                            Price = 15.75,
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            MenuId = 12,
+                            Name = "Yam Fries",
+                            Price = 12.0,
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            MenuId = 13,
+                            Name = "Sushi Cone",
+                            Price = 6.25,
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            MenuId = 14,
+                            Name = "Casar Salad",
+                            Price = 13.0,
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            MenuId = 15,
+                            Name = "Linguine Carbonara",
+                            Price = 22.0,
+                            RestaurantId = 7
                         });
                 });
 
@@ -1270,6 +1291,10 @@ namespace ApiPool.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FoodType")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -1300,6 +1325,7 @@ namespace ApiPool.Data.Migrations
                             City = "Coquitlam",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            Phone = "(604) 705-0704",
                             PostalCode = "V5G 1U8",
                             Province = "British Columbia",
                             RestaurantName = "White Spot",
@@ -1311,6 +1337,7 @@ namespace ApiPool.Data.Migrations
                             City = "Coquitlam",
                             Country = "Canada",
                             FoodType = "Chinese Food",
+                            Phone = "(778) 298-0591",
                             PostalCode = "V6A 1C5",
                             Province = "British Columbia",
                             RestaurantName = "Hons",
@@ -1322,6 +1349,7 @@ namespace ApiPool.Data.Migrations
                             City = "Port Coquitlam",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            Phone = "(604) 394-9339",
                             PostalCode = "V3B 8A4",
                             Province = "British Columbia",
                             RestaurantName = "Boston Pizza",
@@ -1333,6 +1361,7 @@ namespace ApiPool.Data.Migrations
                             City = "Maple Ridge",
                             Country = "Canada",
                             FoodType = "Indian Food",
+                            Phone = "(604) 764-5639",
                             PostalCode = "V2X 1X6",
                             Province = "British Columbia",
                             RestaurantName = "Maple Leaf Indian Cuisine",
@@ -1344,10 +1373,71 @@ namespace ApiPool.Data.Migrations
                             City = "Maple Ridge",
                             Country = "Canada",
                             FoodType = "Greek Food",
+                            Phone = "(604) 554-6639",
                             PostalCode = "V2X 2P9",
                             Province = "British Columbia",
                             RestaurantName = "Socrates Grill",
                             Street = "20691 Lougheed Hwy #19"
+                        },
+                        new
+                        {
+                            RestaurantId = 6,
+                            City = "Burnaby",
+                            Country = "Canada",
+                            FoodType = "Western",
+                            Phone = "(604) 564-5639",
+                            PostalCode = "V5C 6R5",
+                            Province = "BC",
+                            RestaurantName = "JOEY Burnaby",
+                            Street = "109 - 1899 Rosser Ave"
+                        },
+                        new
+                        {
+                            RestaurantId = 7,
+                            City = "Burnaby",
+                            Country = "Canada",
+                            FoodType = "Italian",
+                            Phone = "(604) 424-8779",
+                            PostalCode = "V5H 2A9",
+                            Province = "BC",
+                            RestaurantName = "Trattoria",
+                            Street = "102 - 4501 Kingsway"
+                        },
+                        new
+                        {
+                            RestaurantId = 8,
+                            City = "Burnaby",
+                            Country = "Canada",
+                            FoodType = "Western",
+                            Phone = "(604) 291-6606",
+                            PostalCode = "V6C 0A8",
+                            Province = "BC",
+                            RestaurantName = "Cactus Club Cafe",
+                            Street = "4219 B Lougheed Hwy"
+                        },
+                        new
+                        {
+                            RestaurantId = 9,
+                            City = "Burnaby",
+                            Country = "Canada",
+                            FoodType = "Pub",
+                            Phone = "(604) 453-0811",
+                            PostalCode = "V5G 1C7",
+                            Province = "BC",
+                            RestaurantName = "Personas Patio Restaurant And Lounge",
+                            Street = "4331 Dominion St"
+                        },
+                        new
+                        {
+                            RestaurantId = 10,
+                            City = "Burnaby",
+                            Country = "Canada",
+                            FoodType = "NW plates",
+                            Phone = "(604) 298-4278",
+                            PostalCode = "V5E 4H3",
+                            Province = "BC",
+                            RestaurantName = "Hart House Restaurant",
+                            Street = "6664 Deer Lake Ave"
                         });
                 });
 
