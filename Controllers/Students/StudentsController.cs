@@ -6,55 +6,53 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
-using ApiPool.Models.Foods;
-using Microsoft.AspNetCore.Cors;
+using ApiPool.Models.Students;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Students
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("ApiPolicy")]
-    public class FoodsController : ControllerBase
+    public class StudentsController : ControllerBase
     {
         private readonly ApiPoolContext _context;
 
-        public FoodsController(ApiPoolContext context)
+        public StudentsController(ApiPoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/Foods
+        // GET: api/Students
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Food>>> GetFoods()
+        public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
-            return await _context.Foods.ToListAsync();
+            return await _context.Students.ToListAsync();
         }
 
-        // GET: api/Foods/5
+        // GET: api/Students/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Food>> GetFood(int id)
+        public async Task<ActionResult<Student>> GetStudent(int id)
         {
-            var food = await _context.Foods.FindAsync(id);
+            var student = await _context.Students.FindAsync(id);
 
-            if (food == null)
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return food;
+            return student;
         }
 
-        // PUT: api/Foods/5
+        // PUT: api/Students/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFood(int id, Food food)
+        public async Task<IActionResult> PutStudent(int id, Student student)
         {
-            if (id != food.FoodId)
+            if (id != student.StudentId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(food).State = EntityState.Modified;
+            _context.Entry(student).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +60,7 @@ namespace ApiPool.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!FoodExists(id))
+                if (!StudentExists(id))
                 {
                     return NotFound();
                 }
@@ -75,36 +73,36 @@ namespace ApiPool.Controllers
             return NoContent();
         }
 
-        // POST: api/Foods
+        // POST: api/Students
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Food>> PostFood(Food food)
+        public async Task<ActionResult<Student>> PostStudent(Student student)
         {
-            _context.Foods.Add(food);
+            _context.Students.Add(student);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetFood", new { id = food.FoodId }, food);
+            return CreatedAtAction("GetStudent", new { id = student.StudentId }, student);
         }
 
-        // DELETE: api/Foods/5
+        // DELETE: api/Students/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteFood(int id)
+        public async Task<IActionResult> DeleteStudent(int id)
         {
-            var food = await _context.Foods.FindAsync(id);
-            if (food == null)
+            var student = await _context.Students.FindAsync(id);
+            if (student == null)
             {
                 return NotFound();
             }
 
-            _context.Foods.Remove(food);
+            _context.Students.Remove(student);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool FoodExists(int id)
+        private bool StudentExists(int id)
         {
-            return _context.Foods.Any(e => e.FoodId == id);
+            return _context.Students.Any(e => e.StudentId == id);
         }
     }
 }

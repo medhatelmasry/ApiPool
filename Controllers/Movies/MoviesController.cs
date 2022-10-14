@@ -6,55 +6,55 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
-using ApiPool.Models.Species;
+using ApiPool.Models.Movies;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Movies
 {
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("ApiPolicy")]
-    public class OrganismsController : ControllerBase
+    public class MoviesController : ControllerBase
     {
         private readonly ApiPoolContext _context;
 
-        public OrganismsController(ApiPoolContext context)
+        public MoviesController(ApiPoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/Organisms
+        // GET: api/Movies
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Organism>>> GetOrganisms()
+        public async Task<ActionResult<IEnumerable<Movie>>> GetMovies()
         {
-            return await _context.Organisms.ToListAsync();
+            return await _context.Movies.ToListAsync();
         }
 
-        // GET: api/Organisms/5
+        // GET: api/Movies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Organism>> GetOrganism(int id)
+        public async Task<ActionResult<Movie>> GetMovie(int id)
         {
-            var organism = await _context.Organisms.FindAsync(id);
+            var movie = await _context.Movies.FindAsync(id);
 
-            if (organism == null)
+            if (movie == null)
             {
                 return NotFound();
             }
 
-            return organism;
+            return movie;
         }
 
-        // PUT: api/Organisms/5
+        // PUT: api/Movies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutOrganism(int id, Organism organism)
+        public async Task<IActionResult> PutMovie(int id, Movie movie)
         {
-            if (id != organism.OrganismId)
+            if (id != movie.MovieId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(organism).State = EntityState.Modified;
+            _context.Entry(movie).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +62,7 @@ namespace ApiPool.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OrganismExists(id))
+                if (!MovieExists(id))
                 {
                     return NotFound();
                 }
@@ -75,36 +75,36 @@ namespace ApiPool.Controllers
             return NoContent();
         }
 
-        // POST: api/Organisms
+        // POST: api/Movies
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Organism>> PostOrganism(Organism organism)
+        public async Task<ActionResult<Movie>> PostMovie(Movie movie)
         {
-            _context.Organisms.Add(organism);
+            _context.Movies.Add(movie);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetOrganism", new { id = organism.OrganismId }, organism);
+            return CreatedAtAction("GetMovie", new { id = movie.MovieId }, movie);
         }
 
-        // DELETE: api/Organisms/5
+        // DELETE: api/Movies/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOrganism(int id)
+        public async Task<IActionResult> DeleteMovie(int id)
         {
-            var organism = await _context.Organisms.FindAsync(id);
-            if (organism == null)
+            var movie = await _context.Movies.FindAsync(id);
+            if (movie == null)
             {
                 return NotFound();
             }
 
-            _context.Organisms.Remove(organism);
+            _context.Movies.Remove(movie);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool OrganismExists(int id)
+        private bool MovieExists(int id)
         {
-            return _context.Organisms.Any(e => e.OrganismId == id);
+            return _context.Movies.Any(e => e.MovieId == id);
         }
     }
 }

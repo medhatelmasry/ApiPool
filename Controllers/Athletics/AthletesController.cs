@@ -6,55 +6,55 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
-using ApiPool.Models.Sports;
+using ApiPool.Models.Athletics;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Athletics
 {
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("ApiPolicy")]
-    public class PlayersController : ControllerBase
+    public class AthletesController : ControllerBase
     {
         private readonly ApiPoolContext _context;
 
-        public PlayersController(ApiPoolContext context)
+        public AthletesController(ApiPoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/Players
+        // GET: api/Athletes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Player>>> GetPlayers()
+        public async Task<ActionResult<IEnumerable<Athlete>>> GetAthletes()
         {
-            return await _context.Players.ToListAsync();
+            return await _context.Athletes.ToListAsync();
         }
 
-        // GET: api/Players/5
+        // GET: api/Athletes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Player>> GetPlayer(int id)
+        public async Task<ActionResult<Athlete>> GetAthlete(int id)
         {
-            var player = await _context.Players.FindAsync(id);
+            var athlete = await _context.Athletes.FindAsync(id);
 
-            if (player == null)
+            if (athlete == null)
             {
                 return NotFound();
             }
 
-            return player;
+            return athlete;
         }
 
-        // PUT: api/Players/5
+        // PUT: api/Athletes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPlayer(int id, Player player)
+        public async Task<IActionResult> PutAthlete(int id, Athlete athlete)
         {
-            if (id != player.PlayerId)
+            if (id != athlete.AthleteId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(player).State = EntityState.Modified;
+            _context.Entry(athlete).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +62,7 @@ namespace ApiPool.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PlayerExists(id))
+                if (!AthleteExists(id))
                 {
                     return NotFound();
                 }
@@ -75,36 +75,36 @@ namespace ApiPool.Controllers
             return NoContent();
         }
 
-        // POST: api/Players
+        // POST: api/Athletes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Player>> PostPlayer(Player player)
+        public async Task<ActionResult<Athlete>> PostAthlete(Athlete athlete)
         {
-            _context.Players.Add(player);
+            _context.Athletes.Add(athlete);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPlayer", new { id = player.PlayerId }, player);
+            return CreatedAtAction("GetAthlete", new { id = athlete.AthleteId }, athlete);
         }
 
-        // DELETE: api/Players/5
+        // DELETE: api/Athletes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePlayer(int id)
+        public async Task<IActionResult> DeleteAthlete(int id)
         {
-            var player = await _context.Players.FindAsync(id);
-            if (player == null)
+            var athlete = await _context.Athletes.FindAsync(id);
+            if (athlete == null)
             {
                 return NotFound();
             }
 
-            _context.Players.Remove(player);
+            _context.Athletes.Remove(athlete);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PlayerExists(int id)
+        private bool AthleteExists(int id)
         {
-            return _context.Players.Any(e => e.PlayerId == id);
+            return _context.Athletes.Any(e => e.AthleteId == id);
         }
     }
 }

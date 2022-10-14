@@ -6,55 +6,55 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
-using ApiPool.Models.Countries;
+using ApiPool.Models.Courses;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Courses
 {
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("ApiPolicy")]
-    public class ProvincesController : ControllerBase
+    public class InstructorsController : ControllerBase
     {
         private readonly ApiPoolContext _context;
 
-        public ProvincesController(ApiPoolContext context)
+        public InstructorsController(ApiPoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/Provincess
+        // GET: api/Instructors
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Province>>> GetProvinces()
+        public async Task<ActionResult<IEnumerable<Instructor>>> GetInstructors()
         {
-            return await _context.Provinces.ToListAsync();
+            return await _context.Instructors.ToListAsync();
         }
 
-        // GET: api/Provincess/5
+        // GET: api/Instructors/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Province>> GetProvince(int id)
+        public async Task<ActionResult<Instructor>> GetInstructor(int id)
         {
-            var province = await _context.Provinces.FindAsync(id);
+            var instructor = await _context.Instructors.FindAsync(id);
 
-            if (province == null)
+            if (instructor == null)
             {
                 return NotFound();
             }
 
-            return province;
+            return instructor;
         }
 
-        // PUT: api/Provincess/5
+        // PUT: api/Instructors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProvince(int id, Province province)
+        public async Task<IActionResult> PutInstructor(int id, Instructor instructor)
         {
-            if (id != province.ProvinceId)
+            if (id != instructor.InstructorId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(province).State = EntityState.Modified;
+            _context.Entry(instructor).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +62,7 @@ namespace ApiPool.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProvinceExists(id))
+                if (!InstructorExists(id))
                 {
                     return NotFound();
                 }
@@ -75,36 +75,36 @@ namespace ApiPool.Controllers
             return NoContent();
         }
 
-        // POST: api/Provincess
+        // POST: api/Instructors
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Province>> PostProvince(Province province)
+        public async Task<ActionResult<Instructor>> PostInstructor(Instructor instructor)
         {
-            _context.Provinces.Add(province);
+            _context.Instructors.Add(instructor);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProvince", new { id = province.ProvinceId }, province);
+            return CreatedAtAction("GetInstructor", new { id = instructor.InstructorId }, instructor);
         }
 
-        // DELETE: api/Provincess/5
+        // DELETE: api/Instructors/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProvince(int id)
+        public async Task<IActionResult> DeleteInstructor(int id)
         {
-            var province = await _context.Provinces.FindAsync(id);
-            if (province == null)
+            var instructor = await _context.Instructors.FindAsync(id);
+            if (instructor == null)
             {
                 return NotFound();
             }
 
-            _context.Provinces.Remove(province);
+            _context.Instructors.Remove(instructor);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ProvinceExists(int id)
+        private bool InstructorExists(int id)
         {
-            return _context.Provinces.Any(e => e.ProvinceId == id);
+            return _context.Instructors.Any(e => e.InstructorId == id);
         }
     }
 }

@@ -1,3 +1,8 @@
+dotnet ef migrations add m1 -o Data/Migrations
+dotnet ef database update
+
+=========================
+
 dotnet aspnet-codegenerator controller -name InstructorsController -async -api -m Instructor -dc ApiPoolContext -outDir Controllers
 dotnet aspnet-codegenerator controller -name CoursesController -async -api -m Course -dc ApiPoolContext -outDir Controllers
 
@@ -23,3 +28,5 @@ dotnet aspnet-codegenerator controller -name AthletesController -async -api -m A
 
 dotnet aspnet-codegenerator controller -name TeamsController -async -api -m Team -dc ApiPoolContext -outDir Controllers
 dotnet aspnet-codegenerator controller -name PlayersController -async -api -m Player -dc ApiPoolContext -outDir Controllers
+
+dotnet aspnet-codegenerator controller -name StudentsController -async -api -m Student -dc ApiPoolContext -outDir Controllers

@@ -9,7 +9,7 @@ using ApiPool.Data;
 using ApiPool.Models.Sports;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Sports
 {
     [Route("api/[controller]")]
     [ApiController]

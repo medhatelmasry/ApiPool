@@ -4,7 +4,7 @@ namespace ApiPool.Models.Students
 {
     public class Student
     {
-        public string StudentId { get; set; }
+        public int StudentId { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

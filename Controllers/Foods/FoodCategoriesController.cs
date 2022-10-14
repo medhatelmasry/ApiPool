@@ -6,55 +6,55 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
-using ApiPool.Models.Movies;
+using ApiPool.Models.Foods;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Foods
 {
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("ApiPolicy")]
-    public class ActorsController : ControllerBase
+    public class FoodCategoriesController : ControllerBase
     {
         private readonly ApiPoolContext _context;
 
-        public ActorsController(ApiPoolContext context)
+        public FoodCategoriesController(ApiPoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/Actors
+        // GET: api/FoodCategories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Actor>>> GetActors()
+        public async Task<ActionResult<IEnumerable<FoodCategory>>> GetFoodCategories()
         {
-            return await _context.Actors.ToListAsync();
+            return await _context.FoodCategories.ToListAsync();
         }
 
-        // GET: api/Actors/5
+        // GET: api/FoodCategories/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Actor>> GetActor(int id)
+        public async Task<ActionResult<FoodCategory>> GetFoodCategory(int id)
         {
-            var actor = await _context.Actors.FindAsync(id);
+            var foodCategory = await _context.FoodCategories.FindAsync(id);
 
-            if (actor == null)
+            if (foodCategory == null)
             {
                 return NotFound();
             }
 
-            return actor;
+            return foodCategory;
         }
 
-        // PUT: api/Actors/5
+        // PUT: api/FoodCategories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutActor(int id, Actor actor)
+        public async Task<IActionResult> PutFoodCategory(int id, FoodCategory foodCategory)
         {
-            if (id != actor.ActorId)
+            if (id != foodCategory.FoodCategoryId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(actor).State = EntityState.Modified;
+            _context.Entry(foodCategory).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +62,7 @@ namespace ApiPool.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ActorExists(id))
+                if (!FoodCategoryExists(id))
                 {
                     return NotFound();
                 }
@@ -75,36 +75,36 @@ namespace ApiPool.Controllers
             return NoContent();
         }
 
-        // POST: api/Actors
+        // POST: api/FoodCategories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Actor>> PostActor(Actor actor)
+        public async Task<ActionResult<FoodCategory>> PostFoodCategory(FoodCategory foodCategory)
         {
-            _context.Actors.Add(actor);
+            _context.FoodCategories.Add(foodCategory);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetActor", new { id = actor.ActorId }, actor);
+            return CreatedAtAction("GetFoodCategory", new { id = foodCategory.FoodCategoryId }, foodCategory);
         }
 
-        // DELETE: api/Actors/5
+        // DELETE: api/FoodCategories/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteActor(int id)
+        public async Task<IActionResult> DeleteFoodCategory(int id)
         {
-            var actor = await _context.Actors.FindAsync(id);
-            if (actor == null)
+            var foodCategory = await _context.FoodCategories.FindAsync(id);
+            if (foodCategory == null)
             {
                 return NotFound();
             }
 
-            _context.Actors.Remove(actor);
+            _context.FoodCategories.Remove(foodCategory);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ActorExists(int id)
+        private bool FoodCategoryExists(int id)
         {
-            return _context.Actors.Any(e => e.ActorId == id);
+            return _context.FoodCategories.Any(e => e.FoodCategoryId == id);
         }
     }
 }

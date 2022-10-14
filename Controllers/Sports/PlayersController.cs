@@ -6,55 +6,55 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
-using ApiPool.Models.Movies;
+using ApiPool.Models.Sports;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Sports
 {
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("ApiPolicy")]
-    public class MoviesController : ControllerBase
+    public class PlayersController : ControllerBase
     {
         private readonly ApiPoolContext _context;
 
-        public MoviesController(ApiPoolContext context)
+        public PlayersController(ApiPoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/Movies
+        // GET: api/Players
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Movie>>> GetMovies()
+        public async Task<ActionResult<IEnumerable<Player>>> GetPlayers()
         {
-            return await _context.Movies.ToListAsync();
+            return await _context.Players.ToListAsync();
         }
 
-        // GET: api/Movies/5
+        // GET: api/Players/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movie>> GetMovie(int id)
+        public async Task<ActionResult<Player>> GetPlayer(int id)
         {
-            var movie = await _context.Movies.FindAsync(id);
+            var player = await _context.Players.FindAsync(id);
 
-            if (movie == null)
+            if (player == null)
             {
                 return NotFound();
             }
 
-            return movie;
+            return player;
         }
 
-        // PUT: api/Movies/5
+        // PUT: api/Players/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMovie(int id, Movie movie)
+        public async Task<IActionResult> PutPlayer(int id, Player player)
         {
-            if (id != movie.MovieId)
+            if (id != player.PlayerId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(movie).State = EntityState.Modified;
+            _context.Entry(player).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +62,7 @@ namespace ApiPool.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MovieExists(id))
+                if (!PlayerExists(id))
                 {
                     return NotFound();
                 }
@@ -75,36 +75,36 @@ namespace ApiPool.Controllers
             return NoContent();
         }
 
-        // POST: api/Movies
+        // POST: api/Players
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Movie>> PostMovie(Movie movie)
+        public async Task<ActionResult<Player>> PostPlayer(Player player)
         {
-            _context.Movies.Add(movie);
+            _context.Players.Add(player);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovie", new { id = movie.MovieId }, movie);
+            return CreatedAtAction("GetPlayer", new { id = player.PlayerId }, player);
         }
 
-        // DELETE: api/Movies/5
+        // DELETE: api/Players/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMovie(int id)
+        public async Task<IActionResult> DeletePlayer(int id)
         {
-            var movie = await _context.Movies.FindAsync(id);
-            if (movie == null)
+            var player = await _context.Players.FindAsync(id);
+            if (player == null)
             {
                 return NotFound();
             }
 
-            _context.Movies.Remove(movie);
+            _context.Players.Remove(player);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool MovieExists(int id)
+        private bool PlayerExists(int id)
         {
-            return _context.Movies.Any(e => e.MovieId == id);
+            return _context.Players.Any(e => e.PlayerId == id);
         }
     }
 }

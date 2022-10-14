@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using ApiPool.Data.Seed;
@@ -15,6 +16,8 @@ using ApiPool.Models.Sports;
 using ApiPool.Models.Students;
 using ApiPool.Models.Toons;
 using ApiPool.Models.Vehicles;
+using CsvHelper;
+using CsvHelper.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiPool.Data;
@@ -177,6 +180,31 @@ public partial class ApiPoolContext : DbContext
             modelBuilder.Entity<Toon>().HasData(ToonSeedData.GetToons());
             #endregion
 
+            #region "Seed Students"
+            modelBuilder.Entity<Student>().HasData(GetStudents());
+            #endregion
         }
+
+        private static IEnumerable<Student> GetStudents()
+    {
+        string[] p = { Directory.GetCurrentDirectory(), "wwwroot", "students.csv" };
+        var csvFilePath = Path.Combine(p);
+
+        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+        {
+            PrepareHeaderForMatch = args => args.Header.ToLower(),
+        };
+
+        var data = new List<Student>().AsEnumerable();
+        using (var reader = new StreamReader(csvFilePath))
+        {
+            using (var csvReader = new CsvReader(reader, config))
+            {
+                data = (csvReader.GetRecords<Student>()).ToList();
+            }
+        }
+
+        return data;
+    }
 
     }

@@ -9,7 +9,7 @@ using ApiPool.Data;
 using ApiPool.Models.Countries;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Countries
 {
     [Route("api/[controller]")]
     [ApiController]

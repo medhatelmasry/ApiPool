@@ -9,7 +9,7 @@ using ApiPool.Data;
 using ApiPool.Models.Vehicles;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Vehicles
 {
     [Route("api/[controller]")]
     [ApiController]

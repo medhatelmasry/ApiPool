@@ -6,55 +6,55 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
-using ApiPool.Models.Species;
+using ApiPool.Models.Countries;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Countries
 {
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("ApiPolicy")]
-    public class SpeciesController : ControllerBase
+    public class CitiesController : ControllerBase
     {
         private readonly ApiPoolContext _context;
 
-        public SpeciesController(ApiPoolContext context)
+        public CitiesController(ApiPoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/Species
+        // GET: api/Cities
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Specie>>> GetSpecies()
+        public async Task<ActionResult<IEnumerable<City>>> GetCities()
         {
-            return await _context.Species.ToListAsync();
+            return await _context.Cities.ToListAsync();
         }
 
-        // GET: api/Species/5
+        // GET: api/Cities/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Specie>> GetSpecie(string id)
+        public async Task<ActionResult<City>> GetCity(string id)
         {
-            var specie = await _context.Species.FindAsync(id);
+            var city = await _context.Cities.FindAsync(id);
 
-            if (specie == null)
+            if (city == null)
             {
                 return NotFound();
             }
 
-            return specie;
+            return city;
         }
 
-        // PUT: api/Species/5
+        // PUT: api/Cities/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSpecie(string id, Specie specie)
+        public async Task<IActionResult> PutCity(string id, City city)
         {
-            if (id != specie.SpecieName)
+            if (id != city.CityName)
             {
                 return BadRequest();
             }
 
-            _context.Entry(specie).State = EntityState.Modified;
+            _context.Entry(city).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +62,7 @@ namespace ApiPool.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SpecieExists(id))
+                if (!CityExists(id))
                 {
                     return NotFound();
                 }
@@ -75,19 +75,19 @@ namespace ApiPool.Controllers
             return NoContent();
         }
 
-        // POST: api/Species
+        // POST: api/Cities
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Specie>> PostSpecie(Specie specie)
+        public async Task<ActionResult<City>> PostCity(City city)
         {
-            _context.Species.Add(specie);
+            _context.Cities.Add(city);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (SpecieExists(specie.SpecieName))
+                if (CityExists(city.CityName))
                 {
                     return Conflict();
                 }
@@ -97,28 +97,28 @@ namespace ApiPool.Controllers
                 }
             }
 
-            return CreatedAtAction("GetSpecie", new { id = specie.SpecieName }, specie);
+            return CreatedAtAction("GetCity", new { id = city.CityName }, city);
         }
 
-        // DELETE: api/Species/5
+        // DELETE: api/Cities/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSpecie(string id)
+        public async Task<IActionResult> DeleteCity(string id)
         {
-            var specie = await _context.Species.FindAsync(id);
-            if (specie == null)
+            var city = await _context.Cities.FindAsync(id);
+            if (city == null)
             {
                 return NotFound();
             }
 
-            _context.Species.Remove(specie);
+            _context.Cities.Remove(city);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool SpecieExists(string id)
+        private bool CityExists(string id)
         {
-            return _context.Species.Any(e => e.SpecieName == id);
+            return _context.Cities.Any(e => e.CityName == id);
         }
     }
 }

@@ -6,55 +6,55 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
-using ApiPool.Models.Courses;
+using ApiPool.Models.Species;
 using Microsoft.AspNetCore.Cors;
 
-namespace ApiPool.Controllers
+namespace ApiPool.Controllers.Species
 {
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("ApiPolicy")]
-    public class InstructorsController : ControllerBase
+    public class OrganismsController : ControllerBase
     {
         private readonly ApiPoolContext _context;
 
-        public InstructorsController(ApiPoolContext context)
+        public OrganismsController(ApiPoolContext context)
         {
             _context = context;
         }
 
-        // GET: api/Instructors
+        // GET: api/Organisms
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Instructor>>> GetInstructors()
+        public async Task<ActionResult<IEnumerable<Organism>>> GetOrganisms()
         {
-            return await _context.Instructors.ToListAsync();
+            return await _context.Organisms.ToListAsync();
         }
 
-        // GET: api/Instructors/5
+        // GET: api/Organisms/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Instructor>> GetInstructor(int id)
+        public async Task<ActionResult<Organism>> GetOrganism(int id)
         {
-            var instructor = await _context.Instructors.FindAsync(id);
+            var organism = await _context.Organisms.FindAsync(id);
 
-            if (instructor == null)
+            if (organism == null)
             {
                 return NotFound();
             }
 
-            return instructor;
+            return organism;
         }
 
-        // PUT: api/Instructors/5
+        // PUT: api/Organisms/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutInstructor(int id, Instructor instructor)
+        public async Task<IActionResult> PutOrganism(int id, Organism organism)
         {
-            if (id != instructor.InstructorId)
+            if (id != organism.OrganismId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(instructor).State = EntityState.Modified;
+            _context.Entry(organism).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +62,7 @@ namespace ApiPool.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!InstructorExists(id))
+                if (!OrganismExists(id))
                 {
                     return NotFound();
                 }
@@ -75,36 +75,36 @@ namespace ApiPool.Controllers
             return NoContent();
         }
 
-        // POST: api/Instructors
+        // POST: api/Organisms
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Instructor>> PostInstructor(Instructor instructor)
+        public async Task<ActionResult<Organism>> PostOrganism(Organism organism)
         {
-            _context.Instructors.Add(instructor);
+            _context.Organisms.Add(organism);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetInstructor", new { id = instructor.InstructorId }, instructor);
+            return CreatedAtAction("GetOrganism", new { id = organism.OrganismId }, organism);
         }
 
-        // DELETE: api/Instructors/5
+        // DELETE: api/Organisms/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteInstructor(int id)
+        public async Task<IActionResult> DeleteOrganism(int id)
         {
-            var instructor = await _context.Instructors.FindAsync(id);
-            if (instructor == null)
+            var organism = await _context.Organisms.FindAsync(id);
+            if (organism == null)
             {
                 return NotFound();
             }
 
-            _context.Instructors.Remove(instructor);
+            _context.Organisms.Remove(organism);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool InstructorExists(int id)
+        private bool OrganismExists(int id)
         {
-            return _context.Instructors.Any(e => e.InstructorId == id);
+            return _context.Organisms.Any(e => e.OrganismId == id);
         }
     }
 }
