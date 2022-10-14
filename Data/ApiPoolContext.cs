@@ -22,7 +22,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiPool.Data;
 
-public class ApiPoolContext : DbContext
+public partial class ApiPoolContext : DbContext
 {
     public ApiPoolContext() { }
 
@@ -31,43 +31,70 @@ public class ApiPoolContext : DbContext
     {
     }
 
-    public DbSet<Toon> Toons { get; set; }
+    //public DbSet<Toon> Toons { get; set; }
+    public DbSet<Toon> Toons => Set<Toon>();
 
-    public DbSet<Student> Students { get; set; }
+    //public DbSet<Student> Students { get; set; }
+    public DbSet<Student> Students => Set<Student>();
 
-    public DbSet<FoodCategory> FoodCategories { get; set; }
-    public DbSet<Food> Foods { get; set; }
+    //public DbSet<FoodCategory> FoodCategories { get; set; }
+    public DbSet<FoodCategory> FoodCategories => Set<FoodCategory>();
+    //public DbSet<Food> Foods { get; set; }
+    public DbSet<Food> Foods => Set<Food>();
 
-    public DbSet<VehicleManufacturer> VehicleManufacturers { get; set; }
-    public DbSet<Vehicle> Vehicles { get; set; }
 
-    public DbSet<Instructor> Instructors { get; set; }
-    public DbSet<Course> Courses { get; set; }
+    //public DbSet<VehicleManufacturer> VehicleManufacturers { get; set; }
+    public DbSet<VehicleManufacturer> VehicleManufacturers => Set<VehicleManufacturer>();
+    //public DbSet<Vehicle> Vehicles { get; set; }
+    public DbSet<Vehicle> Vehicles => Set<Vehicle>();
 
-    public DbSet<Continent> Continents { get; set; }
-    public DbSet<City> Cities { get; set; }
-    public DbSet<Country> Countries { get; set; }
-    public DbSet<Province> Provinces { get; set; }
+    //public DbSet<Instructor> Instructors { get; set; }
+    public DbSet<Instructor> Instructors => Set<Instructor>();
+    //public DbSet<Course> Courses { get; set; }
+    public DbSet<Course> Courses => Set<Course>();
 
-    public DbSet<Actor> Actors { get; set; }
-    public DbSet<Movie> Movies { get; set; }
+    //public DbSet<Continent> Continents { get; set; }
+    public DbSet<Continent> Continents => Set<Continent>();
+    //public DbSet<City> Cities { get; set; }
+    public DbSet<City> Cities => Set<City>();
+    //public DbSet<Country> Countries { get; set; }
+    public DbSet<Country> Countries => Set<Country>();
+    //public DbSet<Province> Provinces { get; set; }
+    public DbSet<Province> Provinces => Set<Province>();
 
-    public DbSet<Organism> Organisms { get; set; }
-    public DbSet<Specie> Species { get; set; }
+    //public DbSet<Actor> Actors { get; set; }
+    public DbSet<Actor> Actors => Set<Actor>();
+    //public DbSet<Movie> Movies { get; set; }
+    public DbSet<Movie> Movies => Set<Movie>();
 
-    public DbSet<Competition> Competitions { get; set; }
-    public DbSet<Athlete> Athletes { get; set; }
+    //public DbSet<Organism> Organisms { get; set; }
+    public DbSet<Organism> Organisms => Set<Organism>();
+    //public DbSet<Specie> Species { get; set; }
+    public DbSet<Specie> Species => Set<Specie>();
 
-    public DbSet<Team> Teams { get; set; }
-    public DbSet<Player> Players { get; set; }
+    //public DbSet<Competition> Competitions { get; set; }
+    public DbSet<Competition> Competitions => Set<Competition>();
+    //public DbSet<Athlete> Athletes { get; set; }
+    public DbSet<Athlete> Athletes => Set<Athlete>();
 
-    public DbSet<Restaurant> Restaurants { get; set; }
-    public DbSet<Menu> MenuItems { get; set; }
+    //public DbSet<Team> Teams { get; set; }
+    public DbSet<Team> Teams => Set<Team>();
+    //public DbSet<Player> Players { get; set; }
+    public DbSet<Player> Players => Set<Player>();
 
-    public DbSet<Hospital> Hospitals { get; set; }
-    public DbSet<Patient> Patients { get; set; }
-    public DbSet<Sickness> Sicknesses { get; set; }
-    public DbSet<Medicine> Medicines { get; set; }
+    //public DbSet<Restaurant> Restaurants { get; set; }
+    public DbSet<Restaurant> Restaurants => Set<Restaurant>();
+    // public DbSet<Menu> MenuItems { get; set; }
+    public DbSet<Menu> MenuItems => Set<Menu>();
+
+    //public DbSet<Hospital> Hospitals { get; set; }
+    public DbSet<Hospital> Hospitals => Set<Hospital>();
+    //public DbSet<Patient> Patients { get; set; }
+    public DbSet<Patient> Patients => Set<Patient>();
+    //public DbSet<Sickness> Sicknesses { get; set; }
+    public DbSet<Sickness> Sicknesses => Set<Sickness>();
+    //public DbSet<Medicine> Medicines { get; set; }
+    public DbSet<Medicine> Medicines => Set<Medicine>();
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
