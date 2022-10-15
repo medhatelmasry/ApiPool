@@ -14,6 +14,12 @@ namespace ApiPool.Models.Restaurants
         [Required]
         public double Price { get; set; }
 
+        [Required]
+        public string? PictureUrl { get; set; }
+
+
+
+
         public int RestaurantId { get; set; }
 
         [ForeignKey("RestaurantId")]

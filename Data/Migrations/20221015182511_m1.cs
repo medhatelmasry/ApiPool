@@ -112,7 +112,8 @@ namespace ApiPool.Data.Migrations
                     PostalCode = table.Column<string>(type: "TEXT", nullable: false),
                     Country = table.Column<string>(type: "TEXT", nullable: false),
                     FoodType = table.Column<string>(type: "TEXT", nullable: false),
-                    Phone = table.Column<string>(type: "TEXT", nullable: false)
+                    Phone = table.Column<string>(type: "TEXT", nullable: false),
+                    PictureUrl = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -335,6 +336,7 @@ namespace ApiPool.Data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Price = table.Column<double>(type: "REAL", nullable: false),
+                    PictureUrl = table.Column<string>(type: "TEXT", nullable: false),
                     RestaurantId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -648,53 +650,53 @@ namespace ApiPool.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 1, "Coquitlam", "Canada", "Western Food", "(604) 705-0704", "V5G 1U8", "British Columbia", "White Spot", "1096 Lougheed Highway" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 1, "Coquitlam", "Canada", "Western Food", "(604) 705-0704", "images/restaurant/white-spot.png", "V5G 1U8", "British Columbia", "White Spot", "1096 Lougheed Highway" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 2, "Coquitlam", "Canada", "Chinese Food", "(778) 298-0591", "V6A 1C5", "British Columbia", "Hons", "310-3025 Lougheed Highway" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 2, "Coquitlam", "Canada", "Chinese Food", "(778) 298-0591", "images/restaurant/hons.png", "V6A 1C5", "British Columbia", "Hons", "310-3025 Lougheed Highway" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 3, "Port Coquitlam", "Canada", "Western Food", "(604) 394-9339", "V3B 8A4", "British Columbia", "Boston Pizza", "300 - 2325 Ottawa Street" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 3, "Port Coquitlam", "Canada", "Western Food", "(604) 394-9339", "images/restaurant/boston-pizza.png", "V3B 8A4", "British Columbia", "Boston Pizza", "300 - 2325 Ottawa Street" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 4, "Maple Ridge", "Canada", "Indian Food", "(604) 764-5639", "V2X 1X6", "British Columbia", "Maple Leaf Indian Cuisine", "11956 207 Street" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 4, "Maple Ridge", "Canada", "Indian Food", "(604) 764-5639", "images/restaurant/maple-leaf-indian-cuisine.png", "V2X 1X6", "British Columbia", "Maple Leaf Indian Cuisine", "11956 207 Street" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 5, "Maple Ridge", "Canada", "Greek Food", "(604) 554-6639", "V2X 2P9", "British Columbia", "Socrates Grill", "20691 Lougheed Hwy #19" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 5, "Maple Ridge", "Canada", "Greek Food", "(604) 554-6639", "images/restaurant/socrates-grill.jpeg", "V2X 2P9", "British Columbia", "Socrates Grill", "20691 Lougheed Hwy #19" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 6, "Burnaby", "Canada", "Western", "(604) 564-5639", "V5C 6R5", "BC", "JOEY Burnaby", "109 - 1899 Rosser Ave" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 6, "Burnaby", "Canada", "Western", "(604) 564-5639", "images/restaurant/joeys-bar-and-grill.png", "V5C 6R5", "BC", "JOEY's Bar & Grill", "109 - 1899 Rosser Ave" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 7, "Burnaby", "Canada", "Italian", "(604) 424-8779", "V5H 2A9", "BC", "Trattoria", "102 - 4501 Kingsway" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 7, "Burnaby", "Canada", "Italian", "(604) 424-8779", "images/restaurant/andos-restaurant-and-grill.png", "V5H 2A9", "BC", "Ando's Restaurant & Grill", "102 - 4501 Kingsway" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 8, "Burnaby", "Canada", "Western", "(604) 291-6606", "V6C 0A8", "BC", "Cactus Club Cafe", "4219 B Lougheed Hwy" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 8, "Burnaby", "Canada", "Western", "(604) 291-6606", "images/restaurant/cactus-club-cafe.png", "V6C 0A8", "BC", "Cactus Club Cafe", "4219 B Lougheed Hwy" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 9, "Burnaby", "Canada", "Pub", "(604) 453-0811", "V5G 1C7", "BC", "Personas Patio Restaurant And Lounge", "4331 Dominion St" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 9, "Burnaby", "Canada", "Pub", "(604) 453-0811", "images/restaurant/personas-patio-restaurant-and-lounge.png", "V5G 1C7", "BC", "Personas Patio Restaurant And Lounge", "4331 Dominion St" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 10, "Burnaby", "Canada", "NW plates", "(604) 298-4278", "V5E 4H3", "BC", "Hart House Restaurant", "6664 Deer Lake Ave" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Phone", "PictureUrl", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 10, "Burnaby", "Canada", "NW plates", "(604) 298-4278", "images/restaurant/hart-house-restaurant.jpeg", "V5E 4H3", "BC", "Hart House Restaurant", "6664 Deer Lake Ave" });
 
             migrationBuilder.InsertData(
                 table: "Species",
@@ -1243,78 +1245,78 @@ namespace ApiPool.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 1, "Oven Baked Lasagna", 17.989999999999998, 1 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 1, "Oven Baked Lasagna", "images/menu/oven-baked-lasagna.jpeg", 17.989999999999998, 1 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 2, "Spaghetti & Meatballs", 17.989999999999998, 1 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 2, "Spaghetti & Meatballs", "images/menu/spaghetti-and-meatballs.jpeg", 17.989999999999998, 1 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 3, "Seafood Fettuccine", 19.989999999999998, 1 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 3, "Seafood Fettuccine", "images/menu/seafood-fettuccine.jpeg", 19.989999999999998, 1 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 4, "Barbecued Duck", 25.5, 2 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 4, "Barbecued Duck", "images/menu/barbecued-duck.jpeg", 25.5, 2 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 5, "Roasted Pork", 9.75, 2 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 5, "Roasted Pork", "images/menu/roasted-pork.jpeg", 9.75, 2 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 6, "Royal Hawaiian", 18.989999999999998, 3 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 6, "The Ultimate Hamburger", "images/menu/hamburger.jpeg", 18.989999999999998, 3 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 7, "Royal Hawaiian", 27.989999999999998, 3 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 7, "Maki Sushi", "images/menu/maki-sushi.jpeg", 27.989999999999998, 3 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 8, "Chicken Tikka", 4.9900000000000002, 4 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 8, "Chicken Tikka Masala", "images/menu/chicken-tikka-masala.jpeg", 4.9900000000000002, 4 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 9, "Butter Chicken", 12.99, 4 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 9, "Butter Chicken", "images/menu/butter-chicken.jpeg", 12.99, 4 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 10, "Lamb Souvlaki", 19.0, 5 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 10, "Lamb Souvlaki", "images/menu/lamb-souvlaki.jpeg", 19.0, 5 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 11, "Chili Chicken", 15.75, 6 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 11, "Chili Chicken", "images/menu/chilli-chicken.jpeg", 15.75, 6 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 12, "Yam Fries", 12.0, 6 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 12, "Yam Fries", "images/menu/yam-fries.jpeg", 12.0, 6 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 13, "Sushi Cone", 6.25, 6 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 13, "Sushi Cone", "images/menu/sushi-cone.jpeg", 6.25, 6 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 14, "Casar Salad", 13.0, 7 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 14, "Casar Salad", "images/menu/casar-salad.jpeg", 13.0, 7 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
-                columns: new[] { "MenuId", "Name", "Price", "RestaurantId" },
-                values: new object[] { 15, "Linguine Carbonara", 22.0, 7 });
+                columns: new[] { "MenuId", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 15, "Linguine Carbonara", "images/menu/linguine-carbonara.jpeg", 22.0, 7 });
 
             migrationBuilder.InsertData(
                 table: "Organisms",

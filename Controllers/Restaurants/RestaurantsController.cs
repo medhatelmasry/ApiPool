@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
 using ApiPool.Models.Restaurants;
+using ApiPool.Models.Utils;
 
 namespace ApiPool.Controllers.Restaurants
 {
@@ -16,20 +17,24 @@ namespace ApiPool.Controllers.Restaurants
     {
         private readonly ApiPoolContext _context;
 
-        public RestaurantsController(ApiPoolContext context)
+        public RestaurantsController(ApiPoolContext context, IWebHostEnvironment env)
         {
             _context = context;
         }
 
         // GET: api/Restaurants
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Restaurant>>> GetRestaurants()
+        public async Task<ActionResult<IEnumerable<Restaurant>?>> GetRestaurants()
         {
           if (_context.Restaurants == null)
           {
               return NotFound();
           }
-            return await _context.Restaurants.ToListAsync();
+          var restaurants = await _context.Restaurants.ToListAsync();
+
+          restaurants = Helpers.AdjustPictureUrlInList(Request, restaurants);
+
+          return restaurants;
         }
 
         // GET: api/Restaurants/5
@@ -41,10 +46,16 @@ namespace ApiPool.Controllers.Restaurants
               return NotFound();
           }
             var restaurant = await _context.Restaurants.FindAsync(id);
+            
 
             if (restaurant == null)
             {
                 return NotFound();
+            }
+
+            if (!string.IsNullOrEmpty(restaurant.PictureUrl))
+            {
+                restaurant.PictureUrl = Helpers.AdjustPictureUrl(Request, restaurant.PictureUrl);
             }
 
             return restaurant;

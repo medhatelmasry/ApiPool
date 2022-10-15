@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiPool.Data.Migrations
 {
     [DbContext(typeof(ApiPoolContext))]
-    [Migration("20221014210757_m1")]
+    [Migration("20221015182511_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1156,6 +1156,10 @@ namespace ApiPool.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("PictureUrl")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("Price")
                         .HasColumnType("REAL");
 
@@ -1173,6 +1177,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 1,
                             Name = "Oven Baked Lasagna",
+                            PictureUrl = "images/menu/oven-baked-lasagna.jpeg",
                             Price = 17.989999999999998,
                             RestaurantId = 1
                         },
@@ -1180,6 +1185,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 2,
                             Name = "Spaghetti & Meatballs",
+                            PictureUrl = "images/menu/spaghetti-and-meatballs.jpeg",
                             Price = 17.989999999999998,
                             RestaurantId = 1
                         },
@@ -1187,6 +1193,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 3,
                             Name = "Seafood Fettuccine",
+                            PictureUrl = "images/menu/seafood-fettuccine.jpeg",
                             Price = 19.989999999999998,
                             RestaurantId = 1
                         },
@@ -1194,6 +1201,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 4,
                             Name = "Barbecued Duck",
+                            PictureUrl = "images/menu/barbecued-duck.jpeg",
                             Price = 25.5,
                             RestaurantId = 2
                         },
@@ -1201,27 +1209,31 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 5,
                             Name = "Roasted Pork",
+                            PictureUrl = "images/menu/roasted-pork.jpeg",
                             Price = 9.75,
                             RestaurantId = 2
                         },
                         new
                         {
                             MenuId = 6,
-                            Name = "Royal Hawaiian",
+                            Name = "The Ultimate Hamburger",
+                            PictureUrl = "images/menu/hamburger.jpeg",
                             Price = 18.989999999999998,
                             RestaurantId = 3
                         },
                         new
                         {
                             MenuId = 7,
-                            Name = "Royal Hawaiian",
+                            Name = "Maki Sushi",
+                            PictureUrl = "images/menu/maki-sushi.jpeg",
                             Price = 27.989999999999998,
                             RestaurantId = 3
                         },
                         new
                         {
                             MenuId = 8,
-                            Name = "Chicken Tikka",
+                            Name = "Chicken Tikka Masala",
+                            PictureUrl = "images/menu/chicken-tikka-masala.jpeg",
                             Price = 4.9900000000000002,
                             RestaurantId = 4
                         },
@@ -1229,6 +1241,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 9,
                             Name = "Butter Chicken",
+                            PictureUrl = "images/menu/butter-chicken.jpeg",
                             Price = 12.99,
                             RestaurantId = 4
                         },
@@ -1236,6 +1249,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 10,
                             Name = "Lamb Souvlaki",
+                            PictureUrl = "images/menu/lamb-souvlaki.jpeg",
                             Price = 19.0,
                             RestaurantId = 5
                         },
@@ -1243,6 +1257,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 11,
                             Name = "Chili Chicken",
+                            PictureUrl = "images/menu/chilli-chicken.jpeg",
                             Price = 15.75,
                             RestaurantId = 6
                         },
@@ -1250,6 +1265,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 12,
                             Name = "Yam Fries",
+                            PictureUrl = "images/menu/yam-fries.jpeg",
                             Price = 12.0,
                             RestaurantId = 6
                         },
@@ -1257,6 +1273,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 13,
                             Name = "Sushi Cone",
+                            PictureUrl = "images/menu/sushi-cone.jpeg",
                             Price = 6.25,
                             RestaurantId = 6
                         },
@@ -1264,6 +1281,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 14,
                             Name = "Casar Salad",
+                            PictureUrl = "images/menu/casar-salad.jpeg",
                             Price = 13.0,
                             RestaurantId = 7
                         },
@@ -1271,6 +1289,7 @@ namespace ApiPool.Data.Migrations
                         {
                             MenuId = 15,
                             Name = "Linguine Carbonara",
+                            PictureUrl = "images/menu/linguine-carbonara.jpeg",
                             Price = 22.0,
                             RestaurantId = 7
                         });
@@ -1295,6 +1314,10 @@ namespace ApiPool.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PictureUrl")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -1326,6 +1349,7 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Western Food",
                             Phone = "(604) 705-0704",
+                            PictureUrl = "images/restaurant/white-spot.png",
                             PostalCode = "V5G 1U8",
                             Province = "British Columbia",
                             RestaurantName = "White Spot",
@@ -1338,6 +1362,7 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Chinese Food",
                             Phone = "(778) 298-0591",
+                            PictureUrl = "images/restaurant/hons.png",
                             PostalCode = "V6A 1C5",
                             Province = "British Columbia",
                             RestaurantName = "Hons",
@@ -1350,6 +1375,7 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Western Food",
                             Phone = "(604) 394-9339",
+                            PictureUrl = "images/restaurant/boston-pizza.png",
                             PostalCode = "V3B 8A4",
                             Province = "British Columbia",
                             RestaurantName = "Boston Pizza",
@@ -1362,6 +1388,7 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Indian Food",
                             Phone = "(604) 764-5639",
+                            PictureUrl = "images/restaurant/maple-leaf-indian-cuisine.png",
                             PostalCode = "V2X 1X6",
                             Province = "British Columbia",
                             RestaurantName = "Maple Leaf Indian Cuisine",
@@ -1374,6 +1401,7 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Greek Food",
                             Phone = "(604) 554-6639",
+                            PictureUrl = "images/restaurant/socrates-grill.jpeg",
                             PostalCode = "V2X 2P9",
                             Province = "British Columbia",
                             RestaurantName = "Socrates Grill",
@@ -1386,9 +1414,10 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Western",
                             Phone = "(604) 564-5639",
+                            PictureUrl = "images/restaurant/joeys-bar-and-grill.png",
                             PostalCode = "V5C 6R5",
                             Province = "BC",
-                            RestaurantName = "JOEY Burnaby",
+                            RestaurantName = "JOEY's Bar & Grill",
                             Street = "109 - 1899 Rosser Ave"
                         },
                         new
@@ -1398,9 +1427,10 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Italian",
                             Phone = "(604) 424-8779",
+                            PictureUrl = "images/restaurant/andos-restaurant-and-grill.png",
                             PostalCode = "V5H 2A9",
                             Province = "BC",
-                            RestaurantName = "Trattoria",
+                            RestaurantName = "Ando's Restaurant & Grill",
                             Street = "102 - 4501 Kingsway"
                         },
                         new
@@ -1410,6 +1440,7 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Western",
                             Phone = "(604) 291-6606",
+                            PictureUrl = "images/restaurant/cactus-club-cafe.png",
                             PostalCode = "V6C 0A8",
                             Province = "BC",
                             RestaurantName = "Cactus Club Cafe",
@@ -1422,6 +1453,7 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "Pub",
                             Phone = "(604) 453-0811",
+                            PictureUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png",
                             PostalCode = "V5G 1C7",
                             Province = "BC",
                             RestaurantName = "Personas Patio Restaurant And Lounge",
@@ -1434,6 +1466,7 @@ namespace ApiPool.Data.Migrations
                             Country = "Canada",
                             FoodType = "NW plates",
                             Phone = "(604) 298-4278",
+                            PictureUrl = "images/restaurant/hart-house-restaurant.jpeg",
                             PostalCode = "V5E 4H3",
                             Province = "BC",
                             RestaurantName = "Hart House Restaurant",

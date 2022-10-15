@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
 using ApiPool.Models.Restaurants;
+using ApiPool.Models.Utils;
 
 namespace ApiPool.Controllers.Restaurants
 {
@@ -23,30 +24,38 @@ namespace ApiPool.Controllers.Restaurants
 
         // GET: api/Menus
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Menu>>> GetMenuItems()
+        public async Task<ActionResult<IEnumerable<Menu>?>> GetMenuItems()
         {
-          if (_context.MenuItems == null)
-          {
-              return NotFound();
-          }
-            return await _context.MenuItems
-                .Include(m => m.Restaurant)
-                .ToListAsync();
+            if (_context.MenuItems == null)
+            {
+                return NotFound();
+            }
+
+            var menus = await _context.MenuItems.ToListAsync();
+
+            menus = Helpers.AdjustPictureUrlInList(Request, menus);
+
+            return menus;
         }
 
         // GET: api/Menus/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Menu>> GetMenu(int id)
         {
-          if (_context.MenuItems == null)
-          {
-              return NotFound();
-          }
+            if (_context.MenuItems == null)
+            {
+                return NotFound();
+            }
             var menu = await _context.MenuItems.FindAsync(id);
 
             if (menu == null)
             {
                 return NotFound();
+            }
+
+            if (!string.IsNullOrEmpty(menu.PictureUrl))
+            {
+                menu.PictureUrl = Helpers.AdjustPictureUrl(Request, menu.PictureUrl);
             }
 
             return menu;
@@ -88,10 +97,10 @@ namespace ApiPool.Controllers.Restaurants
         [HttpPost]
         public async Task<ActionResult<Menu>> PostMenu(Menu menu)
         {
-          if (_context.MenuItems == null)
-          {
-              return Problem("Entity set 'ApiPoolContext.MenuItems'  is null.");
-          }
+            if (_context.MenuItems == null)
+            {
+                return Problem("Entity set 'ApiPoolContext.MenuItems'  is null.");
+            }
             _context.MenuItems.Add(menu);
             await _context.SaveChangesAsync();
 

@@ -38,21 +38,16 @@ namespace ApiPool.Controllers.Toons
 
         // GET: api/toons
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Toon>>> GetToons()
+        public async Task<ActionResult<List<Toon>?>> GetToons()
         {
-            var toons = await _context.Toons.ToListAsync();
-            var scheme = Request.Scheme;
-            string siteUrl = Request.Host.Value.ToString();
-
-            foreach (var p in toons)
+            if (_context.Toons == null)
             {
-                if (!string.IsNullOrEmpty(p.PictureUrl))
-                {
-                    // var pos = p.PictureUrl.ToLower().IndexOf("images");
-                    // var dbhost = p.PictureUrl.Substring(0, pos);
-                    p.PictureUrl = $"{scheme}://{siteUrl}/" + p.PictureUrl;
-                }
+                return NotFound();
             }
+
+            var toons = await _context.Toons.ToListAsync();
+
+            toons = Helpers.AdjustPictureUrlInList(Request, toons);
 
             return toons;
         }
@@ -70,9 +65,7 @@ namespace ApiPool.Controllers.Toons
 
             if (!string.IsNullOrEmpty(person.PictureUrl))
             {
-                var pos = person.PictureUrl.ToLower().IndexOf("/images");
-                var dbhost = person.PictureUrl.Substring(0, pos);
-                person.PictureUrl = person.PictureUrl.Replace(dbhost, Helpers.GetHostUrl(Request));
+                person.PictureUrl = Helpers.AdjustPictureUrl(Request, person.PictureUrl);
             }
             return person;
         }
@@ -81,35 +74,35 @@ namespace ApiPool.Controllers.Toons
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPeople(int id, Toon people)
+        public async Task<IActionResult> PutPeople(int id, Toon toon)
         {
-            if (string.IsNullOrEmpty(people.FirstName)
-                || string.IsNullOrEmpty(people.LastName)
-                || string.IsNullOrEmpty(people.Occupation)
-                || string.IsNullOrEmpty(people.Gender)
-                || string.IsNullOrEmpty(people.PictureUrl)
+            if (string.IsNullOrEmpty(toon.FirstName)
+                || string.IsNullOrEmpty(toon.LastName)
+                || string.IsNullOrEmpty(toon.Occupation)
+                || string.IsNullOrEmpty(toon.Gender)
+                || string.IsNullOrEmpty(toon.PictureUrl)
             ) return BadRequest("FirstName, LastName, Occupation, Gender and PictureUrl are required.");
 
-            if (id != people.Id)
+            if (id != toon.Id)
             {
                 return BadRequest();
             }
 
-            if (!string.IsNullOrEmpty(people.PictureUrl))
+            if (!string.IsNullOrEmpty(toon.PictureUrl))
             {
-                if (!Helpers.IsPictureInLegitToonList(people.PictureUrl, _env, Request))
+                if (!Helpers.IsPictureInLegitToonList(toon.PictureUrl, _env, Request))
                 {
                     return BadRequest("Picture must be among those at /api/pictures");
                 }
             }
 
-            people.FirstName = WebUtility.HtmlEncode(people.FirstName);
-            people.LastName = WebUtility.HtmlEncode(people.LastName);
-            people.Occupation = WebUtility.HtmlEncode(people.Occupation);
-            people.Gender = WebUtility.HtmlEncode(people.Gender);
-            people.PictureUrl = WebUtility.HtmlEncode(people.PictureUrl);
+            toon.FirstName = WebUtility.HtmlEncode(toon.FirstName);
+            toon.LastName = WebUtility.HtmlEncode(toon.LastName);
+            toon.Occupation = WebUtility.HtmlEncode(toon.Occupation);
+            toon.Gender = WebUtility.HtmlEncode(toon.Gender);
+            toon.PictureUrl = WebUtility.HtmlEncode(toon.PictureUrl);
 
-            _context.Entry(people).State = EntityState.Modified;
+            _context.Entry(toon).State = EntityState.Modified;
 
             try
             {

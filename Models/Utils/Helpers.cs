@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using ApiPool.Models.Restaurants;
 using ApiPool.Models.Toons;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +10,69 @@ namespace ApiPool.Models.Utils
 {
     public class Helpers
     {
+        public static string AdjustPictureUrl(HttpRequest request, string pictureUrl)
+        {
+            string scheme = request.Scheme;
+            string siteUrl = request.Host.Value.ToString();
+
+            return $"{scheme}://{siteUrl}/" + pictureUrl;
+        }
+
+        void SomeMethod<T>(List<T> someList)
+        {
+            if (typeof(T) == typeof(Toon))
+            {
+                // etc     
+            }
+        }
+
+
+        public static List<T>? AdjustPictureUrlInList<T>(HttpRequest request, List<T> list)
+        {
+
+            if (typeof(T) == typeof(Toon))
+            {
+                List<Toon>? adjustedToons = list! as List<Toon>;
+
+                foreach (var t in adjustedToons!)
+                {
+                    if (!string.IsNullOrEmpty(t.PictureUrl))
+                    {
+                        t.PictureUrl = AdjustPictureUrl(request, t.PictureUrl);
+                    }
+                }
+                return adjustedToons as List<T>;
+
+            }
+            else if (typeof(T) == typeof(Restaurant))
+            {
+                List<Restaurant>? adjustedToons = list as List<Restaurant>;
+
+                foreach (var t in adjustedToons!)
+                {
+                    if (!string.IsNullOrEmpty(t.PictureUrl))
+                    {
+                        t.PictureUrl = AdjustPictureUrl(request, t.PictureUrl);
+                    }
+                }
+                return adjustedToons as List<T>;
+            }
+            else if (typeof(T) == typeof(Menu))
+            {
+                List<Menu>? adjustedList = list as List<Menu>;
+
+                foreach (var t in adjustedList!)
+                {
+                    if (!string.IsNullOrEmpty(t.PictureUrl))
+                    {
+                        t.PictureUrl = AdjustPictureUrl(request, t.PictureUrl);
+                    }
+                }
+                return adjustedList as List<T>;
+            }
+            return new List<T>();
+        }
+
         public static List<Picture> GetPictures(IWebHostEnvironment env, HttpRequest request)
         {
             string disneyPath = env.WebRootPath + $"{Path.DirectorySeparatorChar}images{Path.DirectorySeparatorChar}disney{Path.DirectorySeparatorChar}";
@@ -73,7 +137,8 @@ namespace ApiPool.Models.Utils
             return Path.GetFileName(uri.LocalPath);
         }
 
-        public static string GetHostUrl(HttpRequest request) {
+        public static string GetHostUrl(HttpRequest request)
+        {
             var host = string.Format("{0}://{1}", request.Scheme, request.Host);
             return host;
         }
