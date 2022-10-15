@@ -34,3 +34,7 @@ dotnet aspnet-codegenerator controller -name StudentsController -async -api -m S
 dotnet aspnet-codegenerator controller -name RestaurantsController -async -api -m Restaurant -dc ApiPoolContext -outDir Controllers
 dotnet aspnet-codegenerator controller -name MenusController -async -api -m Menu -dc ApiPoolContext -outDir Controllers
 
+dotnet aspnet-codegenerator controller -name HospitalsController -async -api -m Hospital -dc ApiPoolContext -outDir Controllers
+dotnet aspnet-codegenerator controller -name PatientsController -async -api -m Patient -dc ApiPoolContext -outDir Controllers
+dotnet aspnet-codegenerator controller -name SicknessesController -async -api -m Sickness -dc ApiPoolContext -outDir Controllers
+dotnet aspnet-codegenerator controller -name MedicinesController -async -api -m Medicine -dc ApiPoolContext -outDir Controllers
