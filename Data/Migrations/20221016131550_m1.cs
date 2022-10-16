@@ -671,7 +671,7 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Restaurants",
                 columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 5, "Maple Ridge", "Canada", "Greek Food", "images/restaurant/socrates-grill.jpeg", "(604) 554-6639", "V2X 2P9", "British Columbia", "Socrates Grill", "20691 Lougheed Hwy #19" });
+                values: new object[] { 5, "Maple Ridge", "Canada", "Greek Food", "images/restaurant/socrates-grill.png", "(604) 554-6639", "V2X 2P9", "British Columbia", "Socrates Grill", "20691 Lougheed Hwy #19" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",

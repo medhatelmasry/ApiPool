@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiPool.Data.Migrations
 {
     [DbContext(typeof(ApiPoolContext))]
-    [Migration("20221016124108_m1")]
+    [Migration("20221016131550_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1400,7 +1400,7 @@ namespace ApiPool.Data.Migrations
                             City = "Maple Ridge",
                             Country = "Canada",
                             FoodType = "Greek Food",
-                            LogoUrl = "images/restaurant/socrates-grill.jpeg",
+                            LogoUrl = "images/restaurant/socrates-grill.png",
                             Phone = "(604) 554-6639",
                             PostalCode = "V2X 2P9",
                             Province = "British Columbia",

@@ -72,7 +72,7 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Greek Food",
                      Phone="(604) 554-6639",
-                     LogoUrl = "images/restaurant/socrates-grill.jpeg"
+                     LogoUrl = "images/restaurant/socrates-grill.png"
                  },
                 new Restaurant() {
                     RestaurantId=6,

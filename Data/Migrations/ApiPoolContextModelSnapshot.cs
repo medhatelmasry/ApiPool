@@ -1398,7 +1398,7 @@ namespace ApiPool.Data.Migrations
                             City = "Maple Ridge",
                             Country = "Canada",
                             FoodType = "Greek Food",
-                            LogoUrl = "images/restaurant/socrates-grill.jpeg",
+                            LogoUrl = "images/restaurant/socrates-grill.png",
                             Phone = "(604) 554-6639",
                             PostalCode = "V2X 2P9",
                             Province = "British Columbia",
