@@ -6,7 +6,7 @@ namespace ApiPool.Models.Restaurants
 {
     public class Menu
     {
-        public int MenuId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string? Name { get; set; }

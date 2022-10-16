@@ -53,9 +53,9 @@ namespace ApiPool.Controllers.Restaurants
                 return NotFound();
             }
 
-            if (!string.IsNullOrEmpty(restaurant.PictureUrl))
+            if (!string.IsNullOrEmpty(restaurant.LogoUrl))
             {
-                restaurant.PictureUrl = Helpers.AdjustPictureUrl(Request, restaurant.PictureUrl);
+                restaurant.LogoUrl = Helpers.AdjustPictureUrl(Request, restaurant.LogoUrl);
             }
 
             return restaurant;

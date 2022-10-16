@@ -33,7 +33,7 @@ namespace ApiPool.Models.Restaurants
         public string? Phone { get; set; }
 
         [Required]
-        public string? PictureUrl { get; set; }
+        public string? LogoUrl { get; set; }
 
         public List<Menu>? MenuItems { get; set; }
     }

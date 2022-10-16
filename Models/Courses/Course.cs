@@ -6,7 +6,7 @@ namespace ApiPool.Models.Courses
     public class Course
     {
         [Key]
-        public string? CourseId { get; set; }
+        public string? Id { get; set; }
 
         [Required]
         public string? Name { get; set; }

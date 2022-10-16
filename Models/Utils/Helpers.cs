@@ -29,7 +29,6 @@ namespace ApiPool.Models.Utils
 
         public static List<T>? AdjustPictureUrlInList<T>(HttpRequest request, List<T> list)
         {
-
             if (typeof(T) == typeof(Toon))
             {
                 List<Toon>? adjustedToons = list! as List<Toon>;
@@ -50,9 +49,9 @@ namespace ApiPool.Models.Utils
 
                 foreach (var t in adjustedToons!)
                 {
-                    if (!string.IsNullOrEmpty(t.PictureUrl))
+                    if (!string.IsNullOrEmpty(t.LogoUrl))
                     {
-                        t.PictureUrl = AdjustPictureUrl(request, t.PictureUrl);
+                        t.LogoUrl = AdjustPictureUrl(request, t.LogoUrl);
                     }
                 }
                 return adjustedToons as List<T>;

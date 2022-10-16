@@ -406,7 +406,7 @@ namespace ApiPool.Data.Migrations
 
             modelBuilder.Entity("ApiPool.Models.Courses.Course", b =>
                 {
-                    b.Property<string>("CourseId")
+                    b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("InstructorId")
@@ -416,7 +416,7 @@ namespace ApiPool.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("CourseId");
+                    b.HasKey("Id");
 
                     b.HasIndex("InstructorId");
 
@@ -425,25 +425,25 @@ namespace ApiPool.Data.Migrations
                     b.HasData(
                         new
                         {
-                            CourseId = "COMP2910",
+                            Id = "COMP2910",
                             InstructorId = 1,
                             Name = "Project Management"
                         },
                         new
                         {
-                            CourseId = "COMP3973",
+                            Id = "COMP3973",
                             InstructorId = 2,
                             Name = "ASP.NET"
                         },
                         new
                         {
-                            CourseId = "COMP3717",
+                            Id = "COMP3717",
                             InstructorId = 3,
                             Name = "Android"
                         },
                         new
                         {
-                            CourseId = "COMP1536",
+                            Id = "COMP1536",
                             InstructorId = 4,
                             Name = "HTML & CSS"
                         });
@@ -1146,7 +1146,7 @@ namespace ApiPool.Data.Migrations
 
             modelBuilder.Entity("ApiPool.Models.Restaurants.Menu", b =>
                 {
-                    b.Property<int>("MenuId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -1164,7 +1164,7 @@ namespace ApiPool.Data.Migrations
                     b.Property<int>("RestaurantId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("MenuId");
+                    b.HasKey("Id");
 
                     b.HasIndex("RestaurantId");
 
@@ -1173,7 +1173,7 @@ namespace ApiPool.Data.Migrations
                     b.HasData(
                         new
                         {
-                            MenuId = 1,
+                            Id = 1,
                             Name = "Oven Baked Lasagna",
                             PictureUrl = "images/menu/oven-baked-lasagna.jpeg",
                             Price = 17.989999999999998,
@@ -1181,7 +1181,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 2,
+                            Id = 2,
                             Name = "Spaghetti & Meatballs",
                             PictureUrl = "images/menu/spaghetti-and-meatballs.jpeg",
                             Price = 17.989999999999998,
@@ -1189,7 +1189,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 3,
+                            Id = 3,
                             Name = "Seafood Fettuccine",
                             PictureUrl = "images/menu/seafood-fettuccine.jpeg",
                             Price = 19.989999999999998,
@@ -1197,7 +1197,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 4,
+                            Id = 4,
                             Name = "Barbecued Duck",
                             PictureUrl = "images/menu/barbecued-duck.jpeg",
                             Price = 25.5,
@@ -1205,7 +1205,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 5,
+                            Id = 5,
                             Name = "Roasted Pork",
                             PictureUrl = "images/menu/roasted-pork.jpeg",
                             Price = 9.75,
@@ -1213,7 +1213,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 6,
+                            Id = 6,
                             Name = "The Ultimate Hamburger",
                             PictureUrl = "images/menu/hamburger.jpeg",
                             Price = 18.989999999999998,
@@ -1221,7 +1221,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 7,
+                            Id = 7,
                             Name = "Maki Sushi",
                             PictureUrl = "images/menu/maki-sushi.jpeg",
                             Price = 27.989999999999998,
@@ -1229,7 +1229,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 8,
+                            Id = 8,
                             Name = "Chicken Tikka Masala",
                             PictureUrl = "images/menu/chicken-tikka-masala.jpeg",
                             Price = 4.9900000000000002,
@@ -1237,7 +1237,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 9,
+                            Id = 9,
                             Name = "Butter Chicken",
                             PictureUrl = "images/menu/butter-chicken.jpeg",
                             Price = 12.99,
@@ -1245,7 +1245,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 10,
+                            Id = 10,
                             Name = "Lamb Souvlaki",
                             PictureUrl = "images/menu/lamb-souvlaki.jpeg",
                             Price = 19.0,
@@ -1253,7 +1253,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 11,
+                            Id = 11,
                             Name = "Chili Chicken",
                             PictureUrl = "images/menu/chilli-chicken.jpeg",
                             Price = 15.75,
@@ -1261,7 +1261,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 12,
+                            Id = 12,
                             Name = "Yam Fries",
                             PictureUrl = "images/menu/yam-fries.jpeg",
                             Price = 12.0,
@@ -1269,7 +1269,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 13,
+                            Id = 13,
                             Name = "Sushi Cone",
                             PictureUrl = "images/menu/sushi-cone.jpeg",
                             Price = 6.25,
@@ -1277,7 +1277,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 14,
+                            Id = 14,
                             Name = "Casar Salad",
                             PictureUrl = "images/menu/casar-salad.jpeg",
                             Price = 13.0,
@@ -1285,7 +1285,7 @@ namespace ApiPool.Data.Migrations
                         },
                         new
                         {
-                            MenuId = 15,
+                            Id = 15,
                             Name = "Linguine Carbonara",
                             PictureUrl = "images/menu/linguine-carbonara.jpeg",
                             Price = 22.0,
@@ -1311,11 +1311,11 @@ namespace ApiPool.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Phone")
+                    b.Property<string>("LogoUrl")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PictureUrl")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -1346,8 +1346,8 @@ namespace ApiPool.Data.Migrations
                             City = "Coquitlam",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            LogoUrl = "images/restaurant/white-spot.png",
                             Phone = "(604) 705-0704",
-                            PictureUrl = "images/restaurant/white-spot.png",
                             PostalCode = "V5G 1U8",
                             Province = "British Columbia",
                             RestaurantName = "White Spot",
@@ -1359,8 +1359,8 @@ namespace ApiPool.Data.Migrations
                             City = "Coquitlam",
                             Country = "Canada",
                             FoodType = "Chinese Food",
+                            LogoUrl = "images/restaurant/hons.png",
                             Phone = "(778) 298-0591",
-                            PictureUrl = "images/restaurant/hons.png",
                             PostalCode = "V6A 1C5",
                             Province = "British Columbia",
                             RestaurantName = "Hons",
@@ -1372,8 +1372,8 @@ namespace ApiPool.Data.Migrations
                             City = "Port Coquitlam",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            LogoUrl = "images/restaurant/boston-pizza.png",
                             Phone = "(604) 394-9339",
-                            PictureUrl = "images/restaurant/boston-pizza.png",
                             PostalCode = "V3B 8A4",
                             Province = "British Columbia",
                             RestaurantName = "Boston Pizza",
@@ -1385,8 +1385,8 @@ namespace ApiPool.Data.Migrations
                             City = "Maple Ridge",
                             Country = "Canada",
                             FoodType = "Indian Food",
+                            LogoUrl = "images/restaurant/maple-leaf-indian-cuisine.png",
                             Phone = "(604) 764-5639",
-                            PictureUrl = "images/restaurant/maple-leaf-indian-cuisine.png",
                             PostalCode = "V2X 1X6",
                             Province = "British Columbia",
                             RestaurantName = "Maple Leaf Indian Cuisine",
@@ -1398,8 +1398,8 @@ namespace ApiPool.Data.Migrations
                             City = "Maple Ridge",
                             Country = "Canada",
                             FoodType = "Greek Food",
+                            LogoUrl = "images/restaurant/socrates-grill.jpeg",
                             Phone = "(604) 554-6639",
-                            PictureUrl = "images/restaurant/socrates-grill.jpeg",
                             PostalCode = "V2X 2P9",
                             Province = "British Columbia",
                             RestaurantName = "Socrates Grill",
@@ -1411,8 +1411,8 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "Western",
+                            LogoUrl = "images/restaurant/joeys-bar-and-grill.png",
                             Phone = "(604) 564-5639",
-                            PictureUrl = "images/restaurant/joeys-bar-and-grill.png",
                             PostalCode = "V5C 6R5",
                             Province = "BC",
                             RestaurantName = "JOEY's Bar & Grill",
@@ -1424,8 +1424,8 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "Italian",
+                            LogoUrl = "images/restaurant/andos-restaurant-and-grill.png",
                             Phone = "(604) 424-8779",
-                            PictureUrl = "images/restaurant/andos-restaurant-and-grill.png",
                             PostalCode = "V5H 2A9",
                             Province = "BC",
                             RestaurantName = "Ando's Restaurant & Grill",
@@ -1437,8 +1437,8 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "Western",
+                            LogoUrl = "images/restaurant/cactus-club-cafe.png",
                             Phone = "(604) 291-6606",
-                            PictureUrl = "images/restaurant/cactus-club-cafe.png",
                             PostalCode = "V6C 0A8",
                             Province = "BC",
                             RestaurantName = "Cactus Club Cafe",
@@ -1450,8 +1450,8 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "Pub",
+                            LogoUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png",
                             Phone = "(604) 453-0811",
-                            PictureUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png",
                             PostalCode = "V5G 1C7",
                             Province = "BC",
                             RestaurantName = "Personas Patio Restaurant And Lounge",
@@ -1463,8 +1463,8 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "NW plates",
+                            LogoUrl = "images/restaurant/hart-house-restaurant.jpeg",
                             Phone = "(604) 298-4278",
-                            PictureUrl = "images/restaurant/hart-house-restaurant.jpeg",
                             PostalCode = "V5E 4H3",
                             Province = "BC",
                             RestaurantName = "Hart House Restaurant",

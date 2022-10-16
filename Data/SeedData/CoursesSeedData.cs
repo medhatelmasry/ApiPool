@@ -22,10 +22,10 @@ namespace ApiPool.Data.Seed
         {
             List<Course> items = new List<Course>()
             {
-                new Course() { CourseId = "COMP2910", Name = "Project Management", InstructorId = 1 },
-                new Course() { CourseId = "COMP3973", Name = "ASP.NET", InstructorId = 2 },
-                new Course() { CourseId = "COMP3717", Name = "Android", InstructorId = 3 },
-                new Course() { CourseId = "COMP1536", Name = "HTML & CSS", InstructorId = 4 }
+                new Course() { Id = "COMP2910", Name = "Project Management", InstructorId = 1 },
+                new Course() { Id = "COMP3973", Name = "ASP.NET", InstructorId = 2 },
+                new Course() { Id = "COMP3717", Name = "Android", InstructorId = 3 },
+                new Course() { Id = "COMP1536", Name = "HTML & CSS", InstructorId = 4 }
             };
 
             return items;

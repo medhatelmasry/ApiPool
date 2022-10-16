@@ -49,7 +49,7 @@ namespace ApiPool.Controllers.Courses
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCourse(string id, Course course)
         {
-            if (id != course.CourseId)
+            if (id != course.Id)
             {
                 return BadRequest();
             }
@@ -87,7 +87,7 @@ namespace ApiPool.Controllers.Courses
             }
             catch (DbUpdateException)
             {
-                if (CourseExists(course.CourseId!))
+                if (CourseExists(course.Id!))
                 {
                     return Conflict();
                 }
@@ -97,7 +97,7 @@ namespace ApiPool.Controllers.Courses
                 }
             }
 
-            return CreatedAtAction("GetCourse", new { id = course.CourseId }, course);
+            return CreatedAtAction("GetCourse", new { id = course.Id }, course);
         }
 
         // DELETE: api/Courses/5
@@ -118,7 +118,7 @@ namespace ApiPool.Controllers.Courses
 
         private bool CourseExists(string id)
         {
-            return _context.Courses.Any(e => e.CourseId == id);
+            return _context.Courses.Any(e => e.Id == id);
         }
     }
 }

@@ -66,7 +66,7 @@ namespace ApiPool.Controllers.Restaurants
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMenu(int id, Menu menu)
         {
-            if (id != menu.MenuId)
+            if (id != menu.Id)
             {
                 return BadRequest();
             }
@@ -104,7 +104,7 @@ namespace ApiPool.Controllers.Restaurants
             _context.MenuItems.Add(menu);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMenu", new { id = menu.MenuId }, menu);
+            return CreatedAtAction("GetMenu", new { id = menu.Id }, menu);
         }
 
         // DELETE: api/Menus/5
@@ -129,7 +129,7 @@ namespace ApiPool.Controllers.Restaurants
 
         private bool MenuExists(int id)
         {
-            return (_context.MenuItems?.Any(e => e.MenuId == id)).GetValueOrDefault();
+            return (_context.MenuItems?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

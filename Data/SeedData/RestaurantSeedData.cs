@@ -20,7 +20,7 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Western Food",
                      Phone="(604) 705-0704",
-                     PictureUrl = "images/restaurant/white-spot.png"
+                     LogoUrl = "images/restaurant/white-spot.png"
                  },
                  new Restaurant()
                  {
@@ -33,7 +33,7 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Chinese Food",
                      Phone="(778) 298-0591",
-                     PictureUrl = "images/restaurant/hons.png"
+                     LogoUrl = "images/restaurant/hons.png"
                  },
                  new Restaurant()
                  {
@@ -46,7 +46,7 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Western Food",
                      Phone="(604) 394-9339",
-                     PictureUrl = "images/restaurant/boston-pizza.png"
+                     LogoUrl = "images/restaurant/boston-pizza.png"
                  },
                  new Restaurant()
                  {
@@ -59,7 +59,7 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Indian Food",
                      Phone="(604) 764-5639",
-                     PictureUrl = "images/restaurant/maple-leaf-indian-cuisine.png"
+                     LogoUrl = "images/restaurant/maple-leaf-indian-cuisine.png"
                  },
                  new Restaurant()
                  {
@@ -72,7 +72,7 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Greek Food",
                      Phone="(604) 554-6639",
-                     PictureUrl = "images/restaurant/socrates-grill.jpeg"
+                     LogoUrl = "images/restaurant/socrates-grill.jpeg"
                  },
                 new Restaurant() {
                     RestaurantId=6,
@@ -84,7 +84,7 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Western",
                     Phone="(604) 564-5639",
-                     PictureUrl = "images/restaurant/joeys-bar-and-grill.png"
+                     LogoUrl = "images/restaurant/joeys-bar-and-grill.png"
                 },
                 new Restaurant() {
                     RestaurantId=7,
@@ -96,7 +96,7 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Italian",
                     Phone="(604) 424-8779",
-                     PictureUrl = "images/restaurant/andos-restaurant-and-grill.png"
+                     LogoUrl = "images/restaurant/andos-restaurant-and-grill.png"
                 },
                 new Restaurant() {
                     RestaurantId=8,
@@ -108,7 +108,7 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Western",
                     Phone="(604) 291-6606",
-                     PictureUrl = "images/restaurant/cactus-club-cafe.png"
+                     LogoUrl = "images/restaurant/cactus-club-cafe.png"
                 },
                 new Restaurant() {
                     RestaurantId=9,
@@ -120,7 +120,7 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Pub",
                     Phone="(604) 453-0811",
-                     PictureUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png"
+                     LogoUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png"
                 },
                 new Restaurant() {
                     RestaurantId=10,
@@ -132,7 +132,7 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="NW plates",
                     Phone="(604) 298-4278",
-                    PictureUrl = "images/restaurant/hart-house-restaurant.jpeg"
+                    LogoUrl = "images/restaurant/hart-house-restaurant.jpeg"
                 },
 
             };
@@ -146,7 +146,7 @@ namespace ApiPool.Data.Seed
             {
                  new Menu()
                  {
-                    MenuId = 1,
+                    Id = 1,
                     Name = "Oven Baked Lasagna",
                     Price = 17.99,
                     RestaurantId = 1,
@@ -154,7 +154,7 @@ namespace ApiPool.Data.Seed
                  },
                  new Menu()
                  {
-                    MenuId = 2,
+                    Id = 2,
                     Name = "Spaghetti & Meatballs",
                     Price = 17.99,
                     RestaurantId = 1,
@@ -162,7 +162,7 @@ namespace ApiPool.Data.Seed
                  },
                  new Menu()
                  {
-                    MenuId = 3,
+                    Id = 3,
                     Name = "Seafood Fettuccine",
                     Price = 19.99,
                     RestaurantId = 1,
@@ -170,7 +170,7 @@ namespace ApiPool.Data.Seed
                  },
                  new Menu()
                  {
-                    MenuId = 4,
+                    Id = 4,
                     Name = "Barbecued Duck",
                     Price = 25.50,
                     RestaurantId = 2,
@@ -178,7 +178,7 @@ namespace ApiPool.Data.Seed
                  },
                  new Menu()
                  {
-                    MenuId = 5,
+                    Id = 5,
                     Name = "Roasted Pork",
                     Price = 9.75,
                     RestaurantId = 2,
@@ -186,7 +186,7 @@ namespace ApiPool.Data.Seed
                  },
                  new Menu()
                  {
-                    MenuId = 6,
+                    Id = 6,
                     Name = "The Ultimate Hamburger",
                     Price = 18.99,
                     RestaurantId = 3,
@@ -195,7 +195,7 @@ namespace ApiPool.Data.Seed
 
                  new Menu()
                  {
-                    MenuId = 7,
+                    Id = 7,
                     Name = "Maki Sushi",
                     Price = 27.99,
                     RestaurantId = 3,
@@ -203,7 +203,7 @@ namespace ApiPool.Data.Seed
                  },
                  new Menu()
                  {
-                    MenuId = 8,
+                    Id = 8,
                     Name = "Chicken Tikka Masala",
                     Price = 4.99,
                     RestaurantId = 4,
@@ -211,7 +211,7 @@ namespace ApiPool.Data.Seed
                  },
                  new Menu()
                  {
-                    MenuId = 9,
+                    Id = 9,
                     Name = "Butter Chicken",
                     Price = 12.99,
                     RestaurantId = 4,
@@ -219,42 +219,42 @@ namespace ApiPool.Data.Seed
                  },
                  new Menu()
                  {
-                    MenuId = 10,
+                    Id = 10,
                     Name = "Lamb Souvlaki",
                     Price = 19.00,
                     RestaurantId = 5,
                     PictureUrl = "images/menu/lamb-souvlaki.jpeg"
                  },
                                  new Menu() {
-                    MenuId = 11,
+                    Id = 11,
                     Name = "Chili Chicken",
                     Price = 15.75,
                     RestaurantId = 6,
                     PictureUrl = "images/menu/chilli-chicken.jpeg"
                 },
                 new Menu() {
-                    MenuId = 12,
+                    Id = 12,
                     Name = "Yam Fries",
                     Price = 12.00,
                     RestaurantId = 6,
                     PictureUrl = "images/menu/yam-fries.jpeg"
                 },
                 new Menu() {
-                    MenuId = 13,
+                    Id = 13,
                     Name = "Sushi Cone",
                     Price = 6.25,
                     RestaurantId = 6,
                     PictureUrl = "images/menu/sushi-cone.jpeg"
                 },
                 new Menu() {
-                    MenuId = 14,
+                    Id = 14,
                     Name = "Casar Salad",
                     Price = 13,
                     RestaurantId = 7,
                     PictureUrl = "images/menu/casar-salad.jpeg"
                 },
                 new Menu() {
-                    MenuId = 15,
+                    Id = 15,
                     Name = "Linguine Carbonara",
                     Price = 22,
                     RestaurantId = 7,
