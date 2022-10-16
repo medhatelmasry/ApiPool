@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Species
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Organism>>> GetOrganisms()
         {
-            return await _context.Organisms.ToListAsync();
+            return await _context.Organisms
+            .OrderBy(_ => _.Name)
+            .ToListAsync();
         }
 
         // GET: api/Organisms/5

@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Movies
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Actor>>> GetActors()
         {
-            return await _context.Actors.ToListAsync();
+            return await _context.Actors
+            .OrderBy(_ => _.FirstName + _.LastName)
+            .ToListAsync();
         }
 
         // GET: api/Actors/5

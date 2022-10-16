@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Foods
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Food>>> GetFoods()
         {
-            return await _context.Foods.ToListAsync();
+            return await _context.Foods
+            .OrderBy(_ => _.Name)
+            .ToListAsync();
         }
 
         // GET: api/Foods/5

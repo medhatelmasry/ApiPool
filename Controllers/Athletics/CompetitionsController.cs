@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Athletics
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Competition>>> GetCompetitions()
         {
-            return await _context.Competitions.ToListAsync();
+            return await _context.Competitions
+            .OrderBy(_ => _.EventName)
+            .ToListAsync();
         }
 
         // GET: api/Competitions/5

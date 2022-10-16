@@ -22,7 +22,7 @@ namespace ApiPool.Controllers.Toons
         [HttpGet]
         public IEnumerable<Picture> Get()
         {
-            return Helpers.GetPictures(_env, Request);
+            return Helpers.GetPictures(_env, Request).OrderBy(_ => _.Name);
         }
     }
 

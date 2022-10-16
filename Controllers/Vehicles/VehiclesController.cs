@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Vehicles
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Vehicle>>> GetVehicles()
         {
-            return await _context.Vehicles.ToListAsync();
+            return await _context.Vehicles
+            .OrderBy(_ => _.Model)
+            .ToListAsync();
         }
 
         // GET: api/Vehicles/5

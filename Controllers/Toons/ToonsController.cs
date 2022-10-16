@@ -45,7 +45,9 @@ namespace ApiPool.Controllers.Toons
                 return NotFound();
             }
 
-            var toons = await _context.Toons.ToListAsync();
+            var toons = await _context.Toons
+            .OrderBy(_ => _.FirstName + _.LastName)
+            .ToListAsync();
 
             toons = Helpers.AdjustPictureUrlInList(Request, toons);
 

@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Vehicles
         [HttpGet]
         public async Task<ActionResult<IEnumerable<VehicleManufacturer>>> GetVehicleManufacturers()
         {
-            return await _context.VehicleManufacturers.ToListAsync();
+            return await _context.VehicleManufacturers
+            .OrderBy(_ => _.VehicleManufacturerName)
+            .ToListAsync();
         }
 
         // GET: api/VehicleManufacturers/5

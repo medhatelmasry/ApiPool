@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Countries
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Continent>>> GetContinents()
         {
-            return await _context.Continents.ToListAsync();
+            return await _context.Continents
+            .OrderBy(_ => _.ContinentName)
+            .ToListAsync();
         }
 
         // GET: api/Continents/5

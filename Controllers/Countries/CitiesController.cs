@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Countries
         [HttpGet]
         public async Task<ActionResult<IEnumerable<City>>> GetCities()
         {
-            return await _context.Cities.ToListAsync();
+            return await _context.Cities
+            .OrderBy(_ => _.CityName)
+            .ToListAsync();
         }
 
         // GET: api/Cities/5

@@ -29,7 +29,9 @@ namespace ApiPool.Controllers.Health
           {
               return NotFound();
           }
-            return await _context.Sicknesses.ToListAsync();
+            return await _context.Sicknesses
+            .OrderBy(_ => _.SicknessName)
+            .ToListAsync();
         }
 
         // GET: api/Sicknesses/5

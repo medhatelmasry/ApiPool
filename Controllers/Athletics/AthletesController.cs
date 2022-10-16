@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Athletics
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Athlete>>> GetAthletes()
         {
-            return await _context.Athletes.ToListAsync();
+            return await _context.Athletes
+            .OrderBy(_ => _.FirstName + _.LastName)
+            .ToListAsync();
         }
 
         // GET: api/Athletes/5

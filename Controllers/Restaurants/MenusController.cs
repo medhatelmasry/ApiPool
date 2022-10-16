@@ -31,7 +31,9 @@ namespace ApiPool.Controllers.Restaurants
                 return NotFound();
             }
 
-            var menus = await _context.MenuItems.ToListAsync();
+            var menus = await _context.MenuItems
+            .OrderBy(_ => _.Name)
+            .ToListAsync();
 
             menus = Helpers.AdjustPictureUrlInList(Request, menus);
 

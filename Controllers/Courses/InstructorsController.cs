@@ -27,7 +27,9 @@ namespace ApiPool.Controllers.Courses
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Instructor>>> GetInstructors()
         {
-            return await _context.Instructors.ToListAsync();
+            return await _context.Instructors
+            .OrderBy(_ => _.FirstName + _.LastName)
+            .ToListAsync();
         }
 
         // GET: api/Instructors/5

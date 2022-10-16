@@ -25,7 +25,9 @@ namespace ApiPool.Controllers.Students
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
-            return await _context.Students.ToListAsync();
+            return await _context.Students
+            .OrderBy(_ => _.FirstName + _.LastName)
+            .ToListAsync();
         }
 
         // GET: api/Students/5
