@@ -132,7 +132,7 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="NW plates",
                     Phone="(604) 298-4278",
-                    LogoUrl = "images/restaurant/hart-house-restaurant.jpeg"
+                    LogoUrl = "images/restaurant/hart-house-restaurant.png"
                 },
 
             };

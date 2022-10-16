@@ -1463,7 +1463,7 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "NW plates",
-                            LogoUrl = "images/restaurant/hart-house-restaurant.jpeg",
+                            LogoUrl = "images/restaurant/hart-house-restaurant.png",
                             Phone = "(604) 298-4278",
                             PostalCode = "V5E 4H3",
                             Province = "BC",

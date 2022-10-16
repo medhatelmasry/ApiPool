@@ -696,7 +696,7 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Restaurants",
                 columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 10, "Burnaby", "Canada", "NW plates", "images/restaurant/hart-house-restaurant.jpeg", "(604) 298-4278", "V5E 4H3", "BC", "Hart House Restaurant", "6664 Deer Lake Ave" });
+                values: new object[] { 10, "Burnaby", "Canada", "NW plates", "images/restaurant/hart-house-restaurant.png", "(604) 298-4278", "V5E 4H3", "BC", "Hart House Restaurant", "6664 Deer Lake Ave" });
 
             migrationBuilder.InsertData(
                 table: "Species",
