@@ -82,7 +82,7 @@ namespace ApiPool.Data.Seed
                     Province="BC",
                     PostalCode="V5C 6R5",
                     Country="Canada",
-                    FoodType="Western",
+                    FoodType="Western Food",
                     Phone="(604) 564-5639",
                      LogoUrl = "images/restaurant/joeys-bar-and-grill.png"
                 },
@@ -94,7 +94,7 @@ namespace ApiPool.Data.Seed
                     Province="BC",
                     PostalCode="V5H 2A9",
                     Country="Canada",
-                    FoodType="Italian",
+                    FoodType="Italian Food",
                     Phone="(604) 424-8779",
                      LogoUrl = "images/restaurant/andos-restaurant-and-grill.png"
                 },
@@ -106,7 +106,7 @@ namespace ApiPool.Data.Seed
                     Province="BC",
                     PostalCode="V6C 0A8",
                     Country="Canada",
-                    FoodType="Western",
+                    FoodType="Western Food",
                     Phone="(604) 291-6606",
                      LogoUrl = "images/restaurant/cactus-club-cafe.png"
                 },
@@ -118,7 +118,7 @@ namespace ApiPool.Data.Seed
                     Province="BC",
                     PostalCode="V5G 1C7",
                     Country="Canada",
-                    FoodType="Pub",
+                    FoodType="Pub Food",
                     Phone="(604) 453-0811",
                      LogoUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png"
                 },
@@ -133,6 +133,18 @@ namespace ApiPool.Data.Seed
                     FoodType="NW plates",
                     Phone="(604) 298-4278",
                     LogoUrl = "images/restaurant/hart-house-restaurant.png"
+                },
+                new Restaurant() {
+                    RestaurantId=11,
+                    RestaurantName="Earls Kitchen + Bar",
+                    Street="5100 - 2850 Shaughnessy",
+                    City="Port Coquitlam",
+                    Province="BC",
+                    PostalCode="V5E 4V3",
+                    Country="Canada",
+                    FoodType="Western Food",
+                    Phone="(604) 941-1733",
+                    LogoUrl = "images/restaurant/earls-kitchen-bar.png"
                 },
 
             };

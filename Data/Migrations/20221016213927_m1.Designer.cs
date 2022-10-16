@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiPool.Data.Migrations
 {
     [DbContext(typeof(ApiPoolContext))]
-    [Migration("20221016142954_m1")]
+    [Migration("20221016213927_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1412,7 +1412,7 @@ namespace ApiPool.Data.Migrations
                             RestaurantId = 6,
                             City = "Burnaby",
                             Country = "Canada",
-                            FoodType = "Western",
+                            FoodType = "Western Food",
                             LogoUrl = "images/restaurant/joeys-bar-and-grill.png",
                             Phone = "(604) 564-5639",
                             PostalCode = "V5C 6R5",
@@ -1425,7 +1425,7 @@ namespace ApiPool.Data.Migrations
                             RestaurantId = 7,
                             City = "Burnaby",
                             Country = "Canada",
-                            FoodType = "Italian",
+                            FoodType = "Italian Food",
                             LogoUrl = "images/restaurant/andos-restaurant-and-grill.png",
                             Phone = "(604) 424-8779",
                             PostalCode = "V5H 2A9",
@@ -1438,7 +1438,7 @@ namespace ApiPool.Data.Migrations
                             RestaurantId = 8,
                             City = "Burnaby",
                             Country = "Canada",
-                            FoodType = "Western",
+                            FoodType = "Western Food",
                             LogoUrl = "images/restaurant/cactus-club-cafe.png",
                             Phone = "(604) 291-6606",
                             PostalCode = "V6C 0A8",
@@ -1451,7 +1451,7 @@ namespace ApiPool.Data.Migrations
                             RestaurantId = 9,
                             City = "Burnaby",
                             Country = "Canada",
-                            FoodType = "Pub",
+                            FoodType = "Pub Food",
                             LogoUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png",
                             Phone = "(604) 453-0811",
                             PostalCode = "V5G 1C7",
@@ -1471,6 +1471,19 @@ namespace ApiPool.Data.Migrations
                             Province = "BC",
                             RestaurantName = "Hart House Restaurant",
                             Street = "6664 Deer Lake Ave"
+                        },
+                        new
+                        {
+                            RestaurantId = 11,
+                            City = "Port Coquitlam",
+                            Country = "Canada",
+                            FoodType = "Western Food",
+                            LogoUrl = "images/restaurant/earls-kitchen-bar.png",
+                            Phone = "(604) 941-1733",
+                            PostalCode = "V5E 4V3",
+                            Province = "BC",
+                            RestaurantName = "Earls Kitchen + Bar",
+                            Street = "5100 - 2850 Shaughnessy"
                         });
                 });
 
