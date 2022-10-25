@@ -20,7 +20,9 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Western Food",
                      Phone="(604) 705-0704",
-                     LogoUrl = "images/restaurant/white-spot.png"
+                     LogoUrl = "images/restaurant/white-spot.png",
+                     Latitude = 49.234570,
+                     Longitude = -122.862640,
                  },
                  new Restaurant()
                  {
@@ -33,7 +35,9 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Chinese Food",
                      Phone="(778) 298-0591",
-                     LogoUrl = "images/restaurant/hons.png"
+                     LogoUrl = "images/restaurant/hons.png",
+                     Latitude = 49.274660,
+                     Longitude = -122.792560,
                  },
                  new Restaurant()
                  {
@@ -46,7 +50,9 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Western Food",
                      Phone="(604) 394-9339",
-                     LogoUrl = "images/restaurant/boston-pizza.png"
+                     LogoUrl = "images/restaurant/boston-pizza.png",
+                     Latitude = 49.256670,
+                     Longitude = -122.748250,
                  },
                  new Restaurant()
                  {
@@ -59,7 +65,9 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Indian Food",
                      Phone="(604) 764-5639",
-                     LogoUrl = "images/restaurant/maple-leaf-indian-cuisine.png"
+                     LogoUrl = "images/restaurant/maple-leaf-indian-cuisine.png",
+                     Latitude = 49.219900,
+                     Longitude = -122.647790,
                  },
                  new Restaurant()
                  {
@@ -72,7 +80,9 @@ namespace ApiPool.Data.Seed
                      Country = "Canada",
                      FoodType = "Greek Food",
                      Phone="(604) 554-6639",
-                     LogoUrl = "images/restaurant/socrates-grill.png"
+                     LogoUrl = "images/restaurant/socrates-grill.png",
+                     Latitude = 49.21838,
+                     Longitude = -122.64904,
                  },
                 new Restaurant() {
                     RestaurantId=6,
@@ -84,7 +94,9 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Western Food",
                     Phone="(604) 564-5639",
-                     LogoUrl = "images/restaurant/joeys-bar-and-grill.png"
+                     LogoUrl = "images/restaurant/joeys-bar-and-grill.png",
+                     Latitude = 49.283563,
+                     Longitude = -123.005812,
                 },
                 new Restaurant() {
                     RestaurantId=7,
@@ -96,7 +108,9 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Italian Food",
                     Phone="(604) 424-8779",
-                     LogoUrl = "images/restaurant/andos-restaurant-and-grill.png"
+                     LogoUrl = "images/restaurant/andos-restaurant-and-grill.png",
+                     Latitude = 49.230290,
+                     Longitude = -123.004710,
                 },
                 new Restaurant() {
                     RestaurantId=8,
@@ -108,7 +122,9 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Western Food",
                     Phone="(604) 291-6606",
-                     LogoUrl = "images/restaurant/cactus-club-cafe.png"
+                     LogoUrl = "images/restaurant/cactus-club-cafe.png",
+                     Latitude = 49.238914,
+                     Longitude = -122.958267,
                 },
                 new Restaurant() {
                     RestaurantId=9,
@@ -120,7 +136,9 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Pub Food",
                     Phone="(604) 453-0811",
-                     LogoUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png"
+                     LogoUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png",
+                     Latitude = 49.25633,
+                     Longitude = -123.00727,
                 },
                 new Restaurant() {
                     RestaurantId=10,
@@ -132,7 +150,9 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="NW plates",
                     Phone="(604) 298-4278",
-                    LogoUrl = "images/restaurant/hart-house-restaurant.png"
+                    LogoUrl = "images/restaurant/hart-house-restaurant.png",
+                     Latitude = 49.23856,
+                     Longitude = -122.96683,
                 },
                 new Restaurant() {
                     RestaurantId=11,
@@ -144,7 +164,9 @@ namespace ApiPool.Data.Seed
                     Country="Canada",
                     FoodType="Western Food",
                     Phone="(604) 941-1733",
-                    LogoUrl = "images/restaurant/earls-kitchen-bar.png"
+                    LogoUrl = "images/restaurant/earls-kitchen-bar.png",
+                     Latitude = 49.26557,
+                     Longitude = -122.7784,
                 },
 
             };

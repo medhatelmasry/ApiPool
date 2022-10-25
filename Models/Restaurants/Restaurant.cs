@@ -35,6 +35,9 @@ namespace ApiPool.Models.Restaurants
         [Required]
         public string? LogoUrl { get; set; }
 
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+
         public List<Menu>? MenuItems { get; set; }
     }
 }

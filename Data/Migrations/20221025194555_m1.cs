@@ -113,7 +113,9 @@ namespace ApiPool.Data.Migrations
                     Country = table.Column<string>(type: "TEXT", nullable: false),
                     FoodType = table.Column<string>(type: "TEXT", nullable: false),
                     Phone = table.Column<string>(type: "TEXT", nullable: false),
-                    LogoUrl = table.Column<string>(type: "TEXT", nullable: false)
+                    LogoUrl = table.Column<string>(type: "TEXT", nullable: false),
+                    Latitude = table.Column<double>(type: "REAL", nullable: false),
+                    Longitude = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -561,17 +563,17 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "FoodCategories",
                 columns: new[] { "FoodCategoryId", "Description", "Name" },
-                values: new object[] { 1, "Bakery products, which include bread, rolls, \n                cookies, pies, pastries, and muffins, are usually prepared from flour \n                or meal derived from some form of grain. Bread, already a common \n                staple in prehistoric times, provides many nutrients in the human diet.", "Bakery" });
+                values: new object[] { 1, "Bakery products, which include bread, rolls, \r\n                cookies, pies, pastries, and muffins, are usually prepared from flour \r\n                or meal derived from some form of grain. Bread, already a common \r\n                staple in prehistoric times, provides many nutrients in the human diet.", "Bakery" });
 
             migrationBuilder.InsertData(
                 table: "FoodCategories",
                 columns: new[] { "FoodCategoryId", "Description", "Name" },
-                values: new object[] { 2, "The sweet \n                and fleshy product of a tree or other plant that contains seed \n                and can be eaten as food.", "Fruit" });
+                values: new object[] { 2, "The sweet \r\n                and fleshy product of a tree or other plant that contains seed \r\n                and can be eaten as food.", "Fruit" });
 
             migrationBuilder.InsertData(
                 table: "FoodCategories",
                 columns: new[] { "FoodCategoryId", "Description", "Name" },
-                values: new object[] { 3, "A plant \n                or part of a plant used as food, typically as accompaniment to meat \n                or fish, such as a cabbage, potato, carrot, or bean.", "Vegetables" });
+                values: new object[] { 3, "A plant \r\n                or part of a plant used as food, typically as accompaniment to meat \r\n                or fish, such as a cabbage, potato, carrot, or bean.", "Vegetables" });
 
             migrationBuilder.InsertData(
                 table: "Hospitals",
@@ -650,58 +652,58 @@ namespace ApiPool.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 1, "Coquitlam", "Canada", "Western Food", "images/restaurant/white-spot.png", "(604) 705-0704", "V5G 1U8", "British Columbia", "White Spot", "1096 Lougheed Highway" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 1, "Coquitlam", "Canada", "Western Food", 49.234569999999998, "images/restaurant/white-spot.png", -122.86264, "(604) 705-0704", "V5G 1U8", "British Columbia", "White Spot", "1096 Lougheed Highway" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 2, "Coquitlam", "Canada", "Chinese Food", "images/restaurant/hons.png", "(778) 298-0591", "V6A 1C5", "British Columbia", "Hons", "310-3025 Lougheed Highway" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 2, "Coquitlam", "Canada", "Chinese Food", 49.274659999999997, "images/restaurant/hons.png", -122.79255999999999, "(778) 298-0591", "V6A 1C5", "British Columbia", "Hons", "310-3025 Lougheed Highway" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 3, "Port Coquitlam", "Canada", "Western Food", "images/restaurant/boston-pizza.png", "(604) 394-9339", "V3B 8A4", "British Columbia", "Boston Pizza", "300 - 2325 Ottawa Street" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 3, "Port Coquitlam", "Canada", "Western Food", 49.25667, "images/restaurant/boston-pizza.png", -122.74825, "(604) 394-9339", "V3B 8A4", "British Columbia", "Boston Pizza", "300 - 2325 Ottawa Street" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 4, "Maple Ridge", "Canada", "Indian Food", "images/restaurant/maple-leaf-indian-cuisine.png", "(604) 764-5639", "V2X 1X6", "British Columbia", "Maple Leaf Indian Cuisine", "11956 207 Street" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 4, "Maple Ridge", "Canada", "Indian Food", 49.219900000000003, "images/restaurant/maple-leaf-indian-cuisine.png", -122.64779, "(604) 764-5639", "V2X 1X6", "British Columbia", "Maple Leaf Indian Cuisine", "11956 207 Street" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 5, "Maple Ridge", "Canada", "Greek Food", "images/restaurant/socrates-grill.png", "(604) 554-6639", "V2X 2P9", "British Columbia", "Socrates Grill", "20691 Lougheed Hwy #19" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 5, "Maple Ridge", "Canada", "Greek Food", 49.218380000000003, "images/restaurant/socrates-grill.png", -122.64904, "(604) 554-6639", "V2X 2P9", "British Columbia", "Socrates Grill", "20691 Lougheed Hwy #19" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 6, "Burnaby", "Canada", "Western Food", "images/restaurant/joeys-bar-and-grill.png", "(604) 564-5639", "V5C 6R5", "BC", "JOEY's Bar & Grill", "109 - 1899 Rosser Ave" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 6, "Burnaby", "Canada", "Western Food", 49.283563000000001, "images/restaurant/joeys-bar-and-grill.png", -123.00581200000001, "(604) 564-5639", "V5C 6R5", "BC", "JOEY's Bar & Grill", "109 - 1899 Rosser Ave" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 7, "Burnaby", "Canada", "Italian Food", "images/restaurant/andos-restaurant-and-grill.png", "(604) 424-8779", "V5H 2A9", "BC", "Ando's Restaurant & Grill", "102 - 4501 Kingsway" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 7, "Burnaby", "Canada", "Italian Food", 49.230289999999997, "images/restaurant/andos-restaurant-and-grill.png", -123.00471, "(604) 424-8779", "V5H 2A9", "BC", "Ando's Restaurant & Grill", "102 - 4501 Kingsway" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 8, "Burnaby", "Canada", "Western Food", "images/restaurant/cactus-club-cafe.png", "(604) 291-6606", "V6C 0A8", "BC", "Cactus Club Cafe", "4219 B Lougheed Hwy" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 8, "Burnaby", "Canada", "Western Food", 49.238914000000001, "images/restaurant/cactus-club-cafe.png", -122.95826700000001, "(604) 291-6606", "V6C 0A8", "BC", "Cactus Club Cafe", "4219 B Lougheed Hwy" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 9, "Burnaby", "Canada", "Pub Food", "images/restaurant/personas-patio-restaurant-and-lounge.png", "(604) 453-0811", "V5G 1C7", "BC", "Personas Patio Restaurant And Lounge", "4331 Dominion St" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 9, "Burnaby", "Canada", "Pub Food", 49.256329999999998, "images/restaurant/personas-patio-restaurant-and-lounge.png", -123.00727000000001, "(604) 453-0811", "V5G 1C7", "BC", "Personas Patio Restaurant And Lounge", "4331 Dominion St" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 10, "Burnaby", "Canada", "NW plates", "images/restaurant/hart-house-restaurant.png", "(604) 298-4278", "V5E 4H3", "BC", "Hart House Restaurant", "6664 Deer Lake Ave" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 10, "Burnaby", "Canada", "NW plates", 49.23856, "images/restaurant/hart-house-restaurant.png", -122.96683, "(604) 298-4278", "V5E 4H3", "BC", "Hart House Restaurant", "6664 Deer Lake Ave" });
 
             migrationBuilder.InsertData(
                 table: "Restaurants",
-                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "LogoUrl", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
-                values: new object[] { 11, "Port Coquitlam", "Canada", "Western Food", "images/restaurant/earls-kitchen-bar.png", "(604) 941-1733", "V5E 4V3", "BC", "Earls Kitchen + Bar", "5100 - 2850 Shaughnessy" });
+                columns: new[] { "RestaurantId", "City", "Country", "FoodType", "Latitude", "LogoUrl", "Longitude", "Phone", "PostalCode", "Province", "RestaurantName", "Street" },
+                values: new object[] { 11, "Port Coquitlam", "Canada", "Western Food", 49.265569999999997, "images/restaurant/earls-kitchen-bar.png", -122.7784, "(604) 941-1733", "V5E 4V3", "BC", "Earls Kitchen + Bar", "5100 - 2850 Shaughnessy" });
 
             migrationBuilder.InsertData(
                 table: "Species",
@@ -1012,6 +1014,11 @@ namespace ApiPool.Data.Migrations
                 table: "Students",
                 columns: new[] { "StudentId", "FirstName", "LastName", "School" },
                 values: new object[] { 56, "Ali", "Mac", "Business" });
+
+            migrationBuilder.InsertData(
+                table: "Students",
+                columns: new[] { "StudentId", "FirstName", "LastName", "School" },
+                values: new object[] { 57, "Ken", "Sim", "Medicine" });
 
             migrationBuilder.InsertData(
                 table: "Teams",

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiPool.Data.Migrations
 {
     [DbContext(typeof(ApiPoolContext))]
-    [Migration("20221016213927_m1")]
+    [Migration("20221025194555_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -579,19 +579,19 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             FoodCategoryId = 1,
-                            Description = "Bakery products, which include bread, rolls, \n                cookies, pies, pastries, and muffins, are usually prepared from flour \n                or meal derived from some form of grain. Bread, already a common \n                staple in prehistoric times, provides many nutrients in the human diet.",
+                            Description = "Bakery products, which include bread, rolls, \r\n                cookies, pies, pastries, and muffins, are usually prepared from flour \r\n                or meal derived from some form of grain. Bread, already a common \r\n                staple in prehistoric times, provides many nutrients in the human diet.",
                             Name = "Bakery"
                         },
                         new
                         {
                             FoodCategoryId = 2,
-                            Description = "The sweet \n                and fleshy product of a tree or other plant that contains seed \n                and can be eaten as food.",
+                            Description = "The sweet \r\n                and fleshy product of a tree or other plant that contains seed \r\n                and can be eaten as food.",
                             Name = "Fruit"
                         },
                         new
                         {
                             FoodCategoryId = 3,
-                            Description = "A plant \n                or part of a plant used as food, typically as accompaniment to meat \n                or fish, such as a cabbage, potato, carrot, or bean.",
+                            Description = "A plant \r\n                or part of a plant used as food, typically as accompaniment to meat \r\n                or fish, such as a cabbage, potato, carrot, or bean.",
                             Name = "Vegetables"
                         });
                 });
@@ -1313,9 +1313,15 @@ namespace ApiPool.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("Latitude")
+                        .HasColumnType("REAL");
+
                     b.Property<string>("LogoUrl")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("REAL");
 
                     b.Property<string>("Phone")
                         .IsRequired()
@@ -1348,7 +1354,9 @@ namespace ApiPool.Data.Migrations
                             City = "Coquitlam",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            Latitude = 49.234569999999998,
                             LogoUrl = "images/restaurant/white-spot.png",
+                            Longitude = -122.86264,
                             Phone = "(604) 705-0704",
                             PostalCode = "V5G 1U8",
                             Province = "British Columbia",
@@ -1361,7 +1369,9 @@ namespace ApiPool.Data.Migrations
                             City = "Coquitlam",
                             Country = "Canada",
                             FoodType = "Chinese Food",
+                            Latitude = 49.274659999999997,
                             LogoUrl = "images/restaurant/hons.png",
+                            Longitude = -122.79255999999999,
                             Phone = "(778) 298-0591",
                             PostalCode = "V6A 1C5",
                             Province = "British Columbia",
@@ -1374,7 +1384,9 @@ namespace ApiPool.Data.Migrations
                             City = "Port Coquitlam",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            Latitude = 49.25667,
                             LogoUrl = "images/restaurant/boston-pizza.png",
+                            Longitude = -122.74825,
                             Phone = "(604) 394-9339",
                             PostalCode = "V3B 8A4",
                             Province = "British Columbia",
@@ -1387,7 +1399,9 @@ namespace ApiPool.Data.Migrations
                             City = "Maple Ridge",
                             Country = "Canada",
                             FoodType = "Indian Food",
+                            Latitude = 49.219900000000003,
                             LogoUrl = "images/restaurant/maple-leaf-indian-cuisine.png",
+                            Longitude = -122.64779,
                             Phone = "(604) 764-5639",
                             PostalCode = "V2X 1X6",
                             Province = "British Columbia",
@@ -1400,7 +1414,9 @@ namespace ApiPool.Data.Migrations
                             City = "Maple Ridge",
                             Country = "Canada",
                             FoodType = "Greek Food",
+                            Latitude = 49.218380000000003,
                             LogoUrl = "images/restaurant/socrates-grill.png",
+                            Longitude = -122.64904,
                             Phone = "(604) 554-6639",
                             PostalCode = "V2X 2P9",
                             Province = "British Columbia",
@@ -1413,7 +1429,9 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            Latitude = 49.283563000000001,
                             LogoUrl = "images/restaurant/joeys-bar-and-grill.png",
+                            Longitude = -123.00581200000001,
                             Phone = "(604) 564-5639",
                             PostalCode = "V5C 6R5",
                             Province = "BC",
@@ -1426,7 +1444,9 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "Italian Food",
+                            Latitude = 49.230289999999997,
                             LogoUrl = "images/restaurant/andos-restaurant-and-grill.png",
+                            Longitude = -123.00471,
                             Phone = "(604) 424-8779",
                             PostalCode = "V5H 2A9",
                             Province = "BC",
@@ -1439,7 +1459,9 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            Latitude = 49.238914000000001,
                             LogoUrl = "images/restaurant/cactus-club-cafe.png",
+                            Longitude = -122.95826700000001,
                             Phone = "(604) 291-6606",
                             PostalCode = "V6C 0A8",
                             Province = "BC",
@@ -1452,7 +1474,9 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "Pub Food",
+                            Latitude = 49.256329999999998,
                             LogoUrl = "images/restaurant/personas-patio-restaurant-and-lounge.png",
+                            Longitude = -123.00727000000001,
                             Phone = "(604) 453-0811",
                             PostalCode = "V5G 1C7",
                             Province = "BC",
@@ -1465,7 +1489,9 @@ namespace ApiPool.Data.Migrations
                             City = "Burnaby",
                             Country = "Canada",
                             FoodType = "NW plates",
+                            Latitude = 49.23856,
                             LogoUrl = "images/restaurant/hart-house-restaurant.png",
+                            Longitude = -122.96683,
                             Phone = "(604) 298-4278",
                             PostalCode = "V5E 4H3",
                             Province = "BC",
@@ -1478,7 +1504,9 @@ namespace ApiPool.Data.Migrations
                             City = "Port Coquitlam",
                             Country = "Canada",
                             FoodType = "Western Food",
+                            Latitude = 49.265569999999997,
                             LogoUrl = "images/restaurant/earls-kitchen-bar.png",
+                            Longitude = -122.7784,
                             Phone = "(604) 941-1733",
                             PostalCode = "V5E 4V3",
                             Province = "BC",
@@ -2129,6 +2157,13 @@ namespace ApiPool.Data.Migrations
                             FirstName = "Ali",
                             LastName = "Mac",
                             School = "Business"
+                        },
+                        new
+                        {
+                            StudentId = 57,
+                            FirstName = "Ken",
+                            LastName = "Sim",
+                            School = "Medicine"
                         });
                 });
 
