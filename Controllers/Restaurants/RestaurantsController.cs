@@ -129,6 +129,21 @@ namespace ApiPool.Controllers.Restaurants
             return NoContent();
         }
 
+        // GET api/patients/3/medication
+        [HttpGet("{id:int}/menu")]
+        public async Task<IActionResult> GetMedications(int id)
+        {
+            var menuItems = await _context.MenuItems
+              .Where(m => m.RestaurantId == id)
+              .ToListAsync();
+
+            if (menuItems == null)
+                return NotFound();
+
+            return Ok(menuItems);
+        }
+
+
         private bool RestaurantExists(int id)
         {
             return (_context.Restaurants?.Any(e => e.RestaurantId == id)).GetValueOrDefault();
