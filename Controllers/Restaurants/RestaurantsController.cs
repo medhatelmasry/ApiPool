@@ -139,7 +139,7 @@ namespace ApiPool.Controllers.Restaurants
 
             if (menuItems == null)
                 return NotFound();
-
+            menuItems = Helpers.AdjustPictureUrlInList(Request, menuItems);
             return Ok(menuItems);
         }
 
