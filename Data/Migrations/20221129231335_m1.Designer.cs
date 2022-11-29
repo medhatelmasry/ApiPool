@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiPool.Data.Migrations
 {
     [DbContext(typeof(ApiPoolContext))]
-    [Migration("20221129221907_m1")]
+    [Migration("20221129231335_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1176,7 +1176,7 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Oven Baked Lasagna",
+                            Name = "Baked Lasagna",
                             PictureUrl = "images/menu/oven-baked-lasagna.jpeg",
                             Price = 17.989999999999998,
                             RestaurantId = 1
@@ -1216,7 +1216,7 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             Id = 6,
-                            Name = "The Ultimate Hamburger",
+                            Name = "Superburger",
                             PictureUrl = "images/menu/hamburger.jpeg",
                             Price = 18.989999999999998,
                             RestaurantId = 3
@@ -1232,7 +1232,7 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             Id = 8,
-                            Name = "Chicken Tikka Masala",
+                            Name = "Chicken Tikka",
                             PictureUrl = "images/menu/chicken-tikka-masala.jpeg",
                             Price = 4.9900000000000002,
                             RestaurantId = 4
@@ -1304,7 +1304,7 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             Id = 17,
-                            Name = "Braised Lamb Shank",
+                            Name = "Lamb Shank",
                             PictureUrl = "images/menu/braised-lamb-shank.jpg",
                             Price = 42.0,
                             RestaurantId = 10
@@ -1328,7 +1328,7 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             Id = 20,
-                            Name = "Santa Fe Chicken Salad",
+                            Name = "Chicken Salad",
                             PictureUrl = "images/menu/santa-fe-salad.jpeg",
                             Price = 24.75,
                             RestaurantId = 11
@@ -1336,7 +1336,7 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             Id = 21,
-                            Name = "Street Corn + Avocado Dip",
+                            Name = "Corn & Avocado Dip",
                             PictureUrl = "images/menu/streetcorn-avocado-dip.jpeg",
                             Price = 13.5,
                             RestaurantId = 11

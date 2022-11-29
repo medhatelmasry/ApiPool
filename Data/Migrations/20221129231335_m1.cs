@@ -1258,7 +1258,7 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "MenuItems",
                 columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
-                values: new object[] { 1, "Oven Baked Lasagna", "images/menu/oven-baked-lasagna.jpeg", 17.989999999999998, 1 });
+                values: new object[] { 1, "Baked Lasagna", "images/menu/oven-baked-lasagna.jpeg", 17.989999999999998, 1 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
@@ -1283,7 +1283,7 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "MenuItems",
                 columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
-                values: new object[] { 6, "The Ultimate Hamburger", "images/menu/hamburger.jpeg", 18.989999999999998, 3 });
+                values: new object[] { 6, "Superburger", "images/menu/hamburger.jpeg", 18.989999999999998, 3 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
@@ -1293,7 +1293,7 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "MenuItems",
                 columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
-                values: new object[] { 8, "Chicken Tikka Masala", "images/menu/chicken-tikka-masala.jpeg", 4.9900000000000002, 4 });
+                values: new object[] { 8, "Chicken Tikka", "images/menu/chicken-tikka-masala.jpeg", 4.9900000000000002, 4 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
@@ -1338,7 +1338,7 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "MenuItems",
                 columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
-                values: new object[] { 17, "Braised Lamb Shank", "images/menu/braised-lamb-shank.jpg", 42.0, 10 });
+                values: new object[] { 17, "Lamb Shank", "images/menu/braised-lamb-shank.jpg", 42.0, 10 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
@@ -1353,12 +1353,12 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "MenuItems",
                 columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
-                values: new object[] { 20, "Santa Fe Chicken Salad", "images/menu/santa-fe-salad.jpeg", 24.75, 11 });
+                values: new object[] { 20, "Chicken Salad", "images/menu/santa-fe-salad.jpeg", 24.75, 11 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",
                 columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
-                values: new object[] { 21, "Street Corn + Avocado Dip", "images/menu/streetcorn-avocado-dip.jpeg", 13.5, 11 });
+                values: new object[] { 21, "Corn & Avocado Dip", "images/menu/streetcorn-avocado-dip.jpeg", 13.5, 11 });
 
             migrationBuilder.InsertData(
                 table: "MenuItems",

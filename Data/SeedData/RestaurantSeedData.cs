@@ -181,7 +181,7 @@ namespace ApiPool.Data.Seed
                  new Menu()
                  {
                     Id = 1,
-                    Name = "Oven Baked Lasagna",
+                    Name = "Baked Lasagna",
                     Price = 17.99,
                     RestaurantId = 1,
                     PictureUrl = "images/menu/oven-baked-lasagna.jpeg"
@@ -221,7 +221,7 @@ namespace ApiPool.Data.Seed
                  new Menu()
                  {
                     Id = 6,
-                    Name = "The Ultimate Hamburger",
+                    Name = "Superburger",
                     Price = 18.99,
                     RestaurantId = 3,
                     PictureUrl = "images/menu/hamburger.jpeg"
@@ -238,7 +238,7 @@ namespace ApiPool.Data.Seed
                  new Menu()
                  {
                     Id = 8,
-                    Name = "Chicken Tikka Masala",
+                    Name = "Chicken Tikka",
                     Price = 4.99,
                     RestaurantId = 4,
                     PictureUrl = "images/menu/chicken-tikka-masala.jpeg"
@@ -303,7 +303,7 @@ namespace ApiPool.Data.Seed
                 },
                 new Menu() {
                     Id = 17,
-                    Name = "Braised Lamb Shank",
+                    Name = "Lamb Shank",
                     Price = 42,
                     RestaurantId = 10,
                     PictureUrl = "images/menu/braised-lamb-shank.jpg"
@@ -324,14 +324,14 @@ namespace ApiPool.Data.Seed
                 },
                 new Menu() {
                     Id = 20,
-                    Name = "Santa Fe Chicken Salad",
+                    Name = "Chicken Salad",
                     Price = 24.75,
                     RestaurantId = 11,
                     PictureUrl = "images/menu/santa-fe-salad.jpeg"
                 },
                 new Menu() {
                     Id = 21,
-                    Name = "Street Corn + Avocado Dip",
+                    Name = "Corn & Avocado Dip",
                     Price = 13.50,
                     RestaurantId = 11,
                     PictureUrl = "images/menu/streetcorn-avocado-dip.jpeg"
