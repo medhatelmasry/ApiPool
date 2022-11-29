@@ -1358,10 +1358,34 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             Id = 24,
-                            Name = "Hawaiian CChicken",
+                            Name = "Hawaiian Chicken",
                             PictureUrl = "images/menu/hawaiian-chicken.jpg",
                             Price = 17.5,
                             RestaurantId = 9
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "Rigatoni Bolongese",
+                            PictureUrl = "images/menu/rigatoni-bolongese.jpeg",
+                            Price = 24.25,
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "Peppercorn Steak",
+                            PictureUrl = "images/menu/peppercorn-steak.jpeg",
+                            Price = 37.25,
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "Thai Prawn Curry",
+                            PictureUrl = "images/menu/thai-prawn-curry.jpeg",
+                            Price = 26.25,
+                            RestaurantId = 8
                         });
                 });
 

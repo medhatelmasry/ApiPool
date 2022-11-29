@@ -1373,7 +1373,22 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "MenuItems",
                 columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
-                values: new object[] { 24, "Hawaiian CChicken", "images/menu/hawaiian-chicken.jpg", 17.5, 9 });
+                values: new object[] { 24, "Hawaiian Chicken", "images/menu/hawaiian-chicken.jpg", 17.5, 9 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 25, "Rigatoni Bolongese", "images/menu/rigatoni-bolongese.jpeg", 24.25, 8 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 26, "Peppercorn Steak", "images/menu/peppercorn-steak.jpeg", 37.25, 8 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 27, "Thai Prawn Curry", "images/menu/thai-prawn-curry.jpeg", 26.25, 8 });
 
             migrationBuilder.InsertData(
                 table: "Organisms",
