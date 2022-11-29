@@ -294,7 +294,62 @@ namespace ApiPool.Data.Seed
                     RestaurantId = 7,
                     PictureUrl = "images/menu/linguine-carbonara.jpeg"
                 },
-
+                new Menu() {
+                    Id = 16,
+                    Name = "Eggs Benedict",
+                    Price = 19,
+                    RestaurantId = 10,
+                    PictureUrl = "images/menu/eggs-benedict.jpeg"
+                },
+                new Menu() {
+                    Id = 17,
+                    Name = "Braised Lamb Shank",
+                    Price = 42,
+                    RestaurantId = 10,
+                    PictureUrl = "images/menu/braised-lamb-shank.jpg"
+                },                new Menu() {
+                    Id = 18,
+                    Name = "Cioppino",
+                    Price = 32,
+                    RestaurantId = 10,
+                    PictureUrl = "images/menu/cioppino.jpeg"
+                },                new Menu() {
+                    Id = 19,
+                    Name = "Seafood Platter",
+                    Price = 74,
+                    RestaurantId = 11,
+                    PictureUrl = "images/menu/seafood-platter.jpeg"
+                },                new Menu() {
+                    Id = 20,
+                    Name = "Santa Fe Chicken Salad",
+                    Price = 24.75,
+                    RestaurantId = 11,
+                    PictureUrl = "images/menu/santa-fe-salad.jpeg"
+                },                new Menu() {
+                    Id = 21,
+                    Name = "Street Corn + Avocado Dip",
+                    Price = 13.50,
+                    RestaurantId = 11,
+                    PictureUrl = "images/menu/streetcorn-avocado-dip.jpeg"
+                },                new Menu() {
+                    Id = 22,
+                    Name = "Korean Fried Chicken",
+                    Price = 14,
+                    RestaurantId = 9,
+                    PictureUrl = "images/menu/korean-fried-chicken.jpg"
+                },                new Menu() {
+                    Id = 23,
+                    Name = "Sticky Ribs",
+                    Price = 15,
+                    RestaurantId = 9,
+                    PictureUrl = "images/menu/sticky-ribs.jpeg"
+                },                new Menu() {
+                    Id = 24,
+                    Name = "Hawaiian CChicken",
+                    Price = 17.50,
+                    RestaurantId = 9,
+                    PictureUrl = "images/menu/hawaiian-chicken.jpg"
+                },
             };
 
             return menuitems;

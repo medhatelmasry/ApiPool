@@ -563,17 +563,17 @@ namespace ApiPool.Data.Migrations
             migrationBuilder.InsertData(
                 table: "FoodCategories",
                 columns: new[] { "FoodCategoryId", "Description", "Name" },
-                values: new object[] { 1, "Bakery products, which include bread, rolls, \r\n                cookies, pies, pastries, and muffins, are usually prepared from flour \r\n                or meal derived from some form of grain. Bread, already a common \r\n                staple in prehistoric times, provides many nutrients in the human diet.", "Bakery" });
+                values: new object[] { 1, "Bakery products, which include bread, rolls, \n                cookies, pies, pastries, and muffins, are usually prepared from flour \n                or meal derived from some form of grain. Bread, already a common \n                staple in prehistoric times, provides many nutrients in the human diet.", "Bakery" });
 
             migrationBuilder.InsertData(
                 table: "FoodCategories",
                 columns: new[] { "FoodCategoryId", "Description", "Name" },
-                values: new object[] { 2, "The sweet \r\n                and fleshy product of a tree or other plant that contains seed \r\n                and can be eaten as food.", "Fruit" });
+                values: new object[] { 2, "The sweet \n                and fleshy product of a tree or other plant that contains seed \n                and can be eaten as food.", "Fruit" });
 
             migrationBuilder.InsertData(
                 table: "FoodCategories",
                 columns: new[] { "FoodCategoryId", "Description", "Name" },
-                values: new object[] { 3, "A plant \r\n                or part of a plant used as food, typically as accompaniment to meat \r\n                or fish, such as a cabbage, potato, carrot, or bean.", "Vegetables" });
+                values: new object[] { 3, "A plant \n                or part of a plant used as food, typically as accompaniment to meat \n                or fish, such as a cabbage, potato, carrot, or bean.", "Vegetables" });
 
             migrationBuilder.InsertData(
                 table: "Hospitals",
@@ -1329,6 +1329,51 @@ namespace ApiPool.Data.Migrations
                 table: "MenuItems",
                 columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
                 values: new object[] { 15, "Linguine Carbonara", "images/menu/linguine-carbonara.jpeg", 22.0, 7 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 16, "Eggs Benedict", "images/menu/eggs-benedict.jpeg", 19.0, 10 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 17, "Braised Lamb Shank", "images/menu/braised-lamb-shank.jpg", 42.0, 10 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 18, "Cioppino", "images/menu/cioppino.jpeg", 32.0, 10 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 19, "Seafood Platter", "images/menu/seafood-platter.jpeg", 74.0, 11 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 20, "Santa Fe Chicken Salad", "images/menu/santa-fe-salad.jpeg", 24.75, 11 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 21, "Street Corn + Avocado Dip", "images/menu/streetcorn-avocado-dip.jpeg", 13.5, 11 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 22, "Korean Fried Chicken", "images/menu/korean-fried-chicken.jpg", 14.0, 9 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 23, "Sticky Ribs", "images/menu/sticky-ribs.jpeg", 15.0, 9 });
+
+            migrationBuilder.InsertData(
+                table: "MenuItems",
+                columns: new[] { "Id", "Name", "PictureUrl", "Price", "RestaurantId" },
+                values: new object[] { 24, "Hawaiian CChicken", "images/menu/hawaiian-chicken.jpg", 17.5, 9 });
 
             migrationBuilder.InsertData(
                 table: "Organisms",

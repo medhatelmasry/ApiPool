@@ -577,19 +577,19 @@ namespace ApiPool.Data.Migrations
                         new
                         {
                             FoodCategoryId = 1,
-                            Description = "Bakery products, which include bread, rolls, \r\n                cookies, pies, pastries, and muffins, are usually prepared from flour \r\n                or meal derived from some form of grain. Bread, already a common \r\n                staple in prehistoric times, provides many nutrients in the human diet.",
+                            Description = "Bakery products, which include bread, rolls, \n                cookies, pies, pastries, and muffins, are usually prepared from flour \n                or meal derived from some form of grain. Bread, already a common \n                staple in prehistoric times, provides many nutrients in the human diet.",
                             Name = "Bakery"
                         },
                         new
                         {
                             FoodCategoryId = 2,
-                            Description = "The sweet \r\n                and fleshy product of a tree or other plant that contains seed \r\n                and can be eaten as food.",
+                            Description = "The sweet \n                and fleshy product of a tree or other plant that contains seed \n                and can be eaten as food.",
                             Name = "Fruit"
                         },
                         new
                         {
                             FoodCategoryId = 3,
-                            Description = "A plant \r\n                or part of a plant used as food, typically as accompaniment to meat \r\n                or fish, such as a cabbage, potato, carrot, or bean.",
+                            Description = "A plant \n                or part of a plant used as food, typically as accompaniment to meat \n                or fish, such as a cabbage, potato, carrot, or bean.",
                             Name = "Vegetables"
                         });
                 });
@@ -1290,6 +1290,78 @@ namespace ApiPool.Data.Migrations
                             PictureUrl = "images/menu/linguine-carbonara.jpeg",
                             Price = 22.0,
                             RestaurantId = 7
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "Eggs Benedict",
+                            PictureUrl = "images/menu/eggs-benedict.jpeg",
+                            Price = 19.0,
+                            RestaurantId = 10
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "Braised Lamb Shank",
+                            PictureUrl = "images/menu/braised-lamb-shank.jpg",
+                            Price = 42.0,
+                            RestaurantId = 10
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "Cioppino",
+                            PictureUrl = "images/menu/cioppino.jpeg",
+                            Price = 32.0,
+                            RestaurantId = 10
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "Seafood Platter",
+                            PictureUrl = "images/menu/seafood-platter.jpeg",
+                            Price = 74.0,
+                            RestaurantId = 11
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "Santa Fe Chicken Salad",
+                            PictureUrl = "images/menu/santa-fe-salad.jpeg",
+                            Price = 24.75,
+                            RestaurantId = 11
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "Street Corn + Avocado Dip",
+                            PictureUrl = "images/menu/streetcorn-avocado-dip.jpeg",
+                            Price = 13.5,
+                            RestaurantId = 11
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "Korean Fried Chicken",
+                            PictureUrl = "images/menu/korean-fried-chicken.jpg",
+                            Price = 14.0,
+                            RestaurantId = 9
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "Sticky Ribs",
+                            PictureUrl = "images/menu/sticky-ribs.jpeg",
+                            Price = 15.0,
+                            RestaurantId = 9
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Name = "Hawaiian CChicken",
+                            PictureUrl = "images/menu/hawaiian-chicken.jpg",
+                            Price = 17.5,
+                            RestaurantId = 9
                         });
                 });
 
