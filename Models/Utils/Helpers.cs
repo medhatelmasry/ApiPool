@@ -89,9 +89,10 @@ namespace ApiPool.Models.Utils
             {
                 string fileName = item.Substring(item.LastIndexOf(Path.DirectorySeparatorChar) + 1);
                 string name = fileName.Substring(0, fileName.LastIndexOf(@"."));
+                name = name.Replace(flintstonePath, "");
                 pictures.Add(new Picture
                 {
-                    Name = name,
+                    Name = name.ToFriendlyCase(),
                     Url = $"{scheme}://{siteUrl}/images/flintstone/{fileName}"
                 });
             }
@@ -100,9 +101,10 @@ namespace ApiPool.Models.Utils
             {
                 string fileName = item.Substring(item.LastIndexOf(@"\") + 1);
                 string name = fileName.Substring(0, fileName.LastIndexOf(@"."));
+                name = name.Replace(disneyPath, "");
                 pictures.Add(new Picture
                 {
-                    Name = name,
+                    Name = name.ToFriendlyCase(),
                     Url = $"{scheme}://{siteUrl}/images/disney/{fileName}"
                 });
             }
