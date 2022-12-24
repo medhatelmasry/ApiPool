@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using ApiPool.Data;
 using ApiPool.Models.Toons;
 using ApiPool.Models.Utils;
+using AutoMapper;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -24,16 +25,18 @@ namespace ApiPool.Controllers.Toons
         private readonly ApiPoolContext _context;
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
-
+        private readonly IMapper _mapper;
 
         public ToonsController(IConfiguration configuration,
             ApiPoolContext context,
-            IWebHostEnvironment env
+            IWebHostEnvironment env,
+            IMapper mapper
         )
         {
             _configuration = configuration;
             _context = context;
             _env = env;
+            _mapper = mapper;
         }
 
         // GET: api/toons
@@ -129,6 +132,8 @@ namespace ApiPool.Controllers.Toons
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<ActionResult<Toon>> PostPeople(Toon people)
         {
             string strMaxTblSize = _configuration["MaxTableSize"]!;
