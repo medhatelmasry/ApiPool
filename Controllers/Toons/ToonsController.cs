@@ -131,7 +131,7 @@ namespace ApiPool.Controllers.Toons
         [HttpPost]
         public async Task<ActionResult<Toon>> PostPeople(Toon people)
         {
-            string strMaxTblSize = _configuration["MaxTableSize"];
+            string strMaxTblSize = _configuration["MaxTableSize"]!;
 
             if (!string.IsNullOrEmpty(strMaxTblSize) && _context.Toons.Count() > Convert.ToInt32(strMaxTblSize))
             {
