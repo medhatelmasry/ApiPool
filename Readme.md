@@ -1,0 +1,1 @@
+[![Build and deploy ASP.Net Core app to Azure Web App - apipool](https://github.com/medhatelmasry/ApiPool/actions/workflows/main_apipool.yml/badge.svg)](https://github.com/medhatelmasry/ApiPool/actions/workflows/main_apipool.yml)
