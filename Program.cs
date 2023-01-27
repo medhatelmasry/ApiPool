@@ -1,4 +1,5 @@
 using ApiPool.Data;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
@@ -30,6 +31,8 @@ builder.Services.AddCors(o => o.AddPolicy("ApiPolicy", builder =>
            .AllowAnyHeader();
 }));
 
+builder.Services.AddAutoMapper(typeof(Program)); 
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
