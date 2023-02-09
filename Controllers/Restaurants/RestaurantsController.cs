@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
 using ApiPool.Models.Restaurants;
 using ApiPool.Models.Utils;
+using Microsoft.AspNetCore.Cors;
 
 namespace ApiPool.Controllers.Restaurants
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("ApiPolicy")]
     public class RestaurantsController : ControllerBase
     {
         private readonly ApiPoolContext _context;

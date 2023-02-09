@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
 using ApiPool.Models.Students;
+using Microsoft.AspNetCore.Cors;
 
 namespace ApiPool.Controllers.Students
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("ApiPolicy")]
     public class StudentsController : ControllerBase
     {
         private readonly ApiPoolContext _context;

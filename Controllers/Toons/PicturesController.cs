@@ -9,7 +9,7 @@ namespace ApiPool.Controllers.Toons
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("ToonsPolicy")]
+    [EnableCors("ApiPolicy")]
     public class PicturesController : ControllerBase
     {
         private readonly IWebHostEnvironment _env;

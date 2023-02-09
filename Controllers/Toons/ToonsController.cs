@@ -19,7 +19,7 @@ namespace ApiPool.Controllers.Toons
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("ToonsPolicy")]
+    [EnableCors("ApiPolicy")]
     public class ToonsController : ControllerBase
     {
         private readonly ApiPoolContext _context;
