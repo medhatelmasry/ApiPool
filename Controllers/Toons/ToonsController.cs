@@ -111,6 +111,10 @@ namespace ApiPool.Controllers.Toons
             toon.Gender = WebUtility.HtmlEncode(toon.Gender);
             toon.PictureUrl = WebUtility.HtmlEncode(toon.PictureUrl);
 
+            var imagesPos = toon.PictureUrl.IndexOf("/images");
+            var relativeUrl = toon.PictureUrl.Substring(imagesPos + 1);
+            toon.PictureUrl = WebUtility.HtmlEncode(relativeUrl);
+
             _context.Entry(toon).State = EntityState.Modified;
 
             try
@@ -142,8 +146,6 @@ namespace ApiPool.Controllers.Toons
         {
             string strMaxTblSize = _configuration["MaxTableSize"]!;
 
-            //_logger.LogWarning($"1. {people.PictureUrl}");
-
             if (!string.IsNullOrEmpty(strMaxTblSize) && _context.Toons.Count() > Convert.ToInt32(strMaxTblSize))
             {
                 return BadRequest($"Number of records exceeded {strMaxTblSize}.");
@@ -164,20 +166,18 @@ namespace ApiPool.Controllers.Toons
                 }
             }
 
-            //_logger.LogWarning($"2. {people.PictureUrl}");
-
             people.FirstName = WebUtility.HtmlEncode(people.FirstName);
             people.LastName = WebUtility.HtmlEncode(people.LastName);
             people.Occupation = WebUtility.HtmlEncode(people.Occupation);
             people.Gender = WebUtility.HtmlEncode(people.Gender);
 
-            // var imagesPos = people.PictureUrl.IndexOf("/images");
-            // var pictUrl = people.PictureUrl.Substring(imagesPos);
+            var imagesPos = people.PictureUrl.IndexOf("/images");
+            var relativeUrl = people.PictureUrl.Substring(imagesPos + 1);
 
-            people.PictureUrl = WebUtility.HtmlEncode(people.PictureUrl);
+            // _logger.LogWarning($"pictUrl={relativeUrl}");
 
+            people.PictureUrl = WebUtility.HtmlEncode(relativeUrl);
             _context.Toons.Add(people);
-
             try
             {
                 await _context.SaveChangesAsync();
