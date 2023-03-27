@@ -142,7 +142,7 @@ namespace ApiPool.Controllers.Toons
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<Toon>> PostPeople(Toon people)
+        public async Task<ActionResult<Toon>> PostPeople(Toon toon)
         {
             string strMaxTblSize = _configuration["MaxTableSize"]!;
 
@@ -151,33 +151,33 @@ namespace ApiPool.Controllers.Toons
                 return BadRequest($"Number of records exceeded {strMaxTblSize}.");
             }
 
-            if (string.IsNullOrEmpty(people.FirstName)
-                || string.IsNullOrEmpty(people.LastName)
-                || string.IsNullOrEmpty(people.Occupation)
-                || string.IsNullOrEmpty(people.Gender)
-                || string.IsNullOrEmpty(people.PictureUrl)
+            if (string.IsNullOrEmpty(toon.FirstName)
+                || string.IsNullOrEmpty(toon.LastName)
+                || string.IsNullOrEmpty(toon.Occupation)
+                || string.IsNullOrEmpty(toon.Gender)
+                || string.IsNullOrEmpty(toon.PictureUrl)
                 ) return BadRequest("FirstName, LastName, Occupation, Gender and PictureUrl are required.");
 
-            if (!string.IsNullOrEmpty(people.PictureUrl))
+            if (!string.IsNullOrEmpty(toon.PictureUrl))
             {
-                if (!Helpers.IsPictureInLegitToonList(people.PictureUrl, _env, Request))
+                if (!Helpers.IsPictureInLegitToonList(toon.PictureUrl, _env, Request))
                 {
                     return BadRequest("Picture must be among those at /api/pictures");
                 }
             }
 
-            people.FirstName = WebUtility.HtmlEncode(people.FirstName);
-            people.LastName = WebUtility.HtmlEncode(people.LastName);
-            people.Occupation = WebUtility.HtmlEncode(people.Occupation);
-            people.Gender = WebUtility.HtmlEncode(people.Gender);
+            toon.FirstName = WebUtility.HtmlEncode(toon.FirstName);
+            toon.LastName = WebUtility.HtmlEncode(toon.LastName);
+            toon.Occupation = WebUtility.HtmlEncode(toon.Occupation);
+            toon.Gender = WebUtility.HtmlEncode(toon.Gender);
 
-            var imagesPos = people.PictureUrl.IndexOf("/images");
-            var relativeUrl = people.PictureUrl.Substring(imagesPos + 1);
+            var imagesPos = toon.PictureUrl.IndexOf("/images");
+            var relativeUrl = toon.PictureUrl.Substring(imagesPos + 1);
 
             // _logger.LogWarning($"pictUrl={relativeUrl}");
 
-            people.PictureUrl = WebUtility.HtmlEncode(relativeUrl);
-            _context.Toons.Add(people);
+            toon.PictureUrl = WebUtility.HtmlEncode(relativeUrl);
+            _context.Toons.Add(toon);
             try
             {
                 await _context.SaveChangesAsync();
@@ -187,7 +187,7 @@ namespace ApiPool.Controllers.Toons
                 Console.WriteLine(ex.ToString());
             }
 
-            return CreatedAtAction("GetPeople", new { id = people.Id }, people);
+            return CreatedAtAction("GetPeople", new { id = toon.Id }, toon);
         }
 
         [HttpPost("{id:int}/vote")]
