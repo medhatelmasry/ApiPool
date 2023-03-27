@@ -26,13 +26,17 @@ namespace ApiPool.Controllers.Toons
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
         private readonly IMapper _mapper;
+        private readonly ILogger<ToonsController> _logger;
 
-        public ToonsController(IConfiguration configuration,
+        public ToonsController(
+            ILogger<ToonsController> logger,
+            IConfiguration configuration,
             ApiPoolContext context,
             IWebHostEnvironment env,
             IMapper mapper
         )
         {
+            _logger = logger;
             _configuration = configuration;
             _context = context;
             _env = env;
@@ -138,6 +142,8 @@ namespace ApiPool.Controllers.Toons
         {
             string strMaxTblSize = _configuration["MaxTableSize"]!;
 
+            //_logger.LogWarning($"1. {people.PictureUrl}");
+
             if (!string.IsNullOrEmpty(strMaxTblSize) && _context.Toons.Count() > Convert.ToInt32(strMaxTblSize))
             {
                 return BadRequest($"Number of records exceeded {strMaxTblSize}.");
@@ -158,10 +164,16 @@ namespace ApiPool.Controllers.Toons
                 }
             }
 
+            //_logger.LogWarning($"2. {people.PictureUrl}");
+
             people.FirstName = WebUtility.HtmlEncode(people.FirstName);
             people.LastName = WebUtility.HtmlEncode(people.LastName);
             people.Occupation = WebUtility.HtmlEncode(people.Occupation);
             people.Gender = WebUtility.HtmlEncode(people.Gender);
+
+            // var imagesPos = people.PictureUrl.IndexOf("/images");
+            // var pictUrl = people.PictureUrl.Substring(imagesPos);
+
             people.PictureUrl = WebUtility.HtmlEncode(people.PictureUrl);
 
             _context.Toons.Add(people);

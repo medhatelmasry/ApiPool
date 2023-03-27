@@ -13,8 +13,10 @@ namespace ApiPool.Controllers.Toons
     public class PicturesController : ControllerBase
     {
         private readonly IWebHostEnvironment _env;
-        public PicturesController(IWebHostEnvironment env)
+        private readonly ILogger<PicturesController> _logger;
+        public PicturesController(ILogger<PicturesController> logger,IWebHostEnvironment env)
         {
+            _logger = logger;
             _env = env;
         }
 

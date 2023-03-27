@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using ApiPool.Controllers.Toons;
 using ApiPool.Models.Restaurants;
 using ApiPool.Models.Toons;
 using Microsoft.AspNetCore.Hosting;
@@ -72,6 +73,56 @@ namespace ApiPool.Models.Utils
             return new List<T>();
         }
 
+/*
+        public static List<Picture> GetPictures(ILogger<PicturesController> logger,IWebHostEnvironment env, HttpRequest request)
+        {
+            string disneyPath = env.WebRootPath + $"{Path.DirectorySeparatorChar}images{Path.DirectorySeparatorChar}disney{Path.DirectorySeparatorChar}";
+            string flintstonePath = env.WebRootPath + $"{Path.DirectorySeparatorChar}images{Path.DirectorySeparatorChar}flintstone{Path.DirectorySeparatorChar}";
+
+            string[] disneyImages = Directory.GetFiles(disneyPath);
+            string[] flintstoneImages = Directory.GetFiles(flintstonePath);
+
+            List<Picture> pictures = new List<Picture>();
+
+            string siteUrl = request.Host.Value.ToString();
+            var scheme = request.Scheme;
+
+            foreach (var item in flintstoneImages)
+            {
+                string fileName = item.Substring(item.LastIndexOf(Path.DirectorySeparatorChar) + 1);
+                string name = fileName.Substring(0, fileName.LastIndexOf(@"."));
+                name = name.Replace(flintstonePath, "");
+                
+                //logger.LogWarning($"scheme {scheme}");
+                logger.LogWarning($"siteUrl {siteUrl}");
+                logger.LogWarning($"fileName {fileName}");
+                
+                var url = $"{scheme}://{siteUrl}/images/flintstone/{fileName}";
+                logger.LogWarning($"url {url}");
+
+                pictures.Add(new Picture
+                {
+                    Name = name.ToFriendlyCase(),
+                    Url = url
+                });
+                
+            }
+
+            foreach (var item in disneyImages)
+            {
+                string fileName = item.Substring(item.LastIndexOf(Path.DirectorySeparatorChar) + 1);
+                string name = fileName.Substring(0, fileName.LastIndexOf(@"."));
+                name = name.Replace(disneyPath, "");
+                pictures.Add(new Picture
+                {
+                    Name = name.ToFriendlyCase(),
+                    Url = $"{scheme}://{siteUrl}/images/disney/{fileName}"
+                });
+            }
+
+            return pictures;
+        }
+*/
         public static List<Picture> GetPictures(IWebHostEnvironment env, HttpRequest request)
         {
             string disneyPath = env.WebRootPath + $"{Path.DirectorySeparatorChar}images{Path.DirectorySeparatorChar}disney{Path.DirectorySeparatorChar}";
@@ -99,7 +150,7 @@ namespace ApiPool.Models.Utils
 
             foreach (var item in disneyImages)
             {
-                string fileName = item.Substring(item.LastIndexOf(@"\") + 1);
+                string fileName = item.Substring(item.LastIndexOf(Path.DirectorySeparatorChar) + 1);
                 string name = fileName.Substring(0, fileName.LastIndexOf(@"."));
                 name = name.Replace(disneyPath, "");
                 pictures.Add(new Picture
