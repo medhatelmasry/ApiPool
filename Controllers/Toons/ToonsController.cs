@@ -193,17 +193,19 @@ namespace ApiPool.Controllers.Toons
         [HttpPost("{id:int}/vote")]
         public async Task<ActionResult<Toon>> IncrementVote(int id)
         {
-            var people = await _context.Toons.FindAsync(id);
+            var toon = await _context.Toons.FindAsync(id);
 
-            if (people == null)
+            if (toon == null)
             {
                 return NotFound();
             }
-            people.Votes = ++people.Votes;
+            toon.Votes = ++toon.Votes;
             //_context.Entry(people).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
-            return people;
+            toon.PictureUrl = Helpers.AdjustPictureUrl(Request, toon.PictureUrl!);
+
+            return toon;
         }
 
         // DELETE: api/People/5
