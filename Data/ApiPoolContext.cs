@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using ApiPool.Data.Seed;
 using ApiPool.Models.Athletics;
 using ApiPool.Models.Countries;
@@ -19,6 +15,7 @@ using ApiPool.Models.Vehicles;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.EntityFrameworkCore;
+using ApiPool.Models.Quiz;
 
 namespace ApiPool.Data;
 
@@ -96,6 +93,7 @@ public partial class ApiPoolContext : DbContext
     //public DbSet<Medicine> Medicines { get; set; }
     public DbSet<Medicine> Medicines => Set<Medicine>();
 
+    public DbSet<QuizResult> Quizzes => Set<QuizResult>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -205,6 +203,10 @@ public partial class ApiPoolContext : DbContext
         modelBuilder.Entity<Toon>().HasData(ToonSeedData.GetToons());
         #endregion
 
+        #region "Seed Quiz Results Data"
+        modelBuilder.Entity<QuizResult>().HasData(QuizSeedData.GetQuizResults());
+        #endregion
+
         #region "Seed Students"
         modelBuilder.Entity<Student>().HasData(GetStudents());
         #endregion
@@ -231,5 +233,7 @@ public partial class ApiPoolContext : DbContext
 
         return data;
     }
+
+    public DbSet<ApiPool.Models.Quiz.QuizResult> QuizResult { get; set; } = default!;
 
 }

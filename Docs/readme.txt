@@ -1,4 +1,4 @@
-dotnet ef migrations add m1 -o Data/Migrations
+dotnet ef migrations add M1 -o Data/Migrations
 dotnet ef database update
 
 =========================

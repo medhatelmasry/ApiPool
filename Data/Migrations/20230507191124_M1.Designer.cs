@@ -11,13 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiPool.Data.Migrations
 {
     [DbContext(typeof(ApiPoolContext))]
-    [Migration("20221129231335_m1")]
-    partial class m1
+    [Migration("20230507191124_M1")]
+    partial class M1
     {
+        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "6.0.10");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.1");
 
             modelBuilder.Entity("ApiPool.Models.Athletics.Athlete", b =>
                 {
@@ -1143,6 +1144,137 @@ namespace ApiPool.Data.Migrations
                             Name = "Spartacus",
                             Rating = "PG",
                             Year = 1960
+                        });
+                });
+
+            modelBuilder.Entity("ApiPool.Models.Quiz.QuizResult", b =>
+                {
+                    b.Property<int>("QuizResultId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateOnly>("DateOfQuiz")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("NumberOfQuestionsInQuiz")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<TimeOnly>("TimeOfQuiz")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("WebAppId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("QuizResultId");
+
+                    b.ToTable("QuizResult");
+
+                    b.HasData(
+                        new
+                        {
+                            QuizResultId = 1,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Tom Max",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 8,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7830)),
+                            WebAppId = "d74c4d21-e60b-4c6b-80b8-4505896c39bd"
+                        },
+                        new
+                        {
+                            QuizResultId = 2,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Ann Fay",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 5,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7850)),
+                            WebAppId = "4d836559-4e5e-4cc9-acef-646fd8021516"
+                        },
+                        new
+                        {
+                            QuizResultId = 3,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Ken Sim",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 6,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7860)),
+                            WebAppId = "124e9daf-a8eb-4a37-84ff-5d7665b123ee"
+                        },
+                        new
+                        {
+                            QuizResultId = 4,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Joe Sun",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 9,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7870)),
+                            WebAppId = "ac5e5228-194c-4720-97e2-444894ce236c"
+                        },
+                        new
+                        {
+                            QuizResultId = 5,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Sue Fox",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 4,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7880)),
+                            WebAppId = "c68d3cc6-03b3-4e36-a04d-a59963193331"
+                        },
+                        new
+                        {
+                            QuizResultId = 6,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Ben Ray",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 7,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7900)),
+                            WebAppId = "4946a047-34d7-468a-af10-320d75236f06"
+                        },
+                        new
+                        {
+                            QuizResultId = 7,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Zoe Cox",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 4,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7910)),
+                            WebAppId = "a5764069-19e4-47ff-802b-bf16bab84ff5"
+                        },
+                        new
+                        {
+                            QuizResultId = 8,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Sam Ray",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 10,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7920)),
+                            WebAppId = "0912c6cf-337c-45ba-a36f-0d8755c4b1d0"
+                        },
+                        new
+                        {
+                            QuizResultId = 9,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Dan Ash",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 8,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7930)),
+                            WebAppId = "efbc601f-cfc6-4071-8884-0c9f5778cc30"
+                        },
+                        new
+                        {
+                            QuizResultId = 10,
+                            DateOfQuiz = new DateOnly(2023, 5, 7),
+                            Name = "Pat Day",
+                            NumberOfQuestionsInQuiz = 10,
+                            Score = 6,
+                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7940)),
+                            WebAppId = "6dff6a08-b48d-4d45-8d82-cf88c3a8f2cc"
                         });
                 });
 
