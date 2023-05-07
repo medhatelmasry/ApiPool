@@ -1180,7 +1180,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Tom Max",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 8,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7830)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9930)),
                             WebAppId = "d74c4d21-e60b-4c6b-80b8-4505896c39bd"
                         },
                         new
@@ -1190,7 +1190,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Ann Fay",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 5,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7850)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9940)),
                             WebAppId = "4d836559-4e5e-4cc9-acef-646fd8021516"
                         },
                         new
@@ -1200,7 +1200,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Ken Sim",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 6,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7860)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9950)),
                             WebAppId = "124e9daf-a8eb-4a37-84ff-5d7665b123ee"
                         },
                         new
@@ -1210,7 +1210,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Joe Sun",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 9,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7870)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9950)),
                             WebAppId = "ac5e5228-194c-4720-97e2-444894ce236c"
                         },
                         new
@@ -1220,7 +1220,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Sue Fox",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 4,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7880)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9950)),
                             WebAppId = "c68d3cc6-03b3-4e36-a04d-a59963193331"
                         },
                         new
@@ -1230,7 +1230,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Ben Ray",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 7,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7900)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9960)),
                             WebAppId = "4946a047-34d7-468a-af10-320d75236f06"
                         },
                         new
@@ -1240,7 +1240,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Zoe Cox",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 4,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7910)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9960)),
                             WebAppId = "a5764069-19e4-47ff-802b-bf16bab84ff5"
                         },
                         new
@@ -1250,7 +1250,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Sam Ray",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 10,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7920)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9970)),
                             WebAppId = "0912c6cf-337c-45ba-a36f-0d8755c4b1d0"
                         },
                         new
@@ -1260,7 +1260,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Dan Ash",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 8,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7930)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9970)),
                             WebAppId = "efbc601f-cfc6-4071-8884-0c9f5778cc30"
                         },
                         new
@@ -1270,7 +1270,7 @@ namespace ApiPool.Data.Migrations
                             Name = "Pat Day",
                             NumberOfQuestionsInQuiz = 10,
                             Score = 6,
-                            TimeOfQuiz = new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7940)),
+                            TimeOfQuiz = new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9970)),
                             WebAppId = "6dff6a08-b48d-4d45-8d82-cf88c3a8f2cc"
                         });
                 });

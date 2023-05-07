@@ -595,16 +595,16 @@ namespace ApiPool.Data.Migrations
                 columns: new[] { "QuizResultId", "DateOfQuiz", "Name", "NumberOfQuestionsInQuiz", "Score", "TimeOfQuiz", "WebAppId" },
                 values: new object[,]
                 {
-                    { 1, new DateOnly(2023, 5, 7), "Tom Max", 10, 8, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7830)), "d74c4d21-e60b-4c6b-80b8-4505896c39bd" },
-                    { 2, new DateOnly(2023, 5, 7), "Ann Fay", 10, 5, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7850)), "4d836559-4e5e-4cc9-acef-646fd8021516" },
-                    { 3, new DateOnly(2023, 5, 7), "Ken Sim", 10, 6, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7860)), "124e9daf-a8eb-4a37-84ff-5d7665b123ee" },
-                    { 4, new DateOnly(2023, 5, 7), "Joe Sun", 10, 9, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7870)), "ac5e5228-194c-4720-97e2-444894ce236c" },
-                    { 5, new DateOnly(2023, 5, 7), "Sue Fox", 10, 4, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7880)), "c68d3cc6-03b3-4e36-a04d-a59963193331" },
-                    { 6, new DateOnly(2023, 5, 7), "Ben Ray", 10, 7, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7900)), "4946a047-34d7-468a-af10-320d75236f06" },
-                    { 7, new DateOnly(2023, 5, 7), "Zoe Cox", 10, 4, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7910)), "a5764069-19e4-47ff-802b-bf16bab84ff5" },
-                    { 8, new DateOnly(2023, 5, 7), "Sam Ray", 10, 10, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7920)), "0912c6cf-337c-45ba-a36f-0d8755c4b1d0" },
-                    { 9, new DateOnly(2023, 5, 7), "Dan Ash", 10, 8, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7930)), "efbc601f-cfc6-4071-8884-0c9f5778cc30" },
-                    { 10, new DateOnly(2023, 5, 7), "Pat Day", 10, 6, new TimeOnly(12, 11, 24, 629).Add(TimeSpan.FromTicks(7940)), "6dff6a08-b48d-4d45-8d82-cf88c3a8f2cc" }
+                    { 1, new DateOnly(2023, 5, 7), "Tom Max", 10, 8, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9930)), "d74c4d21-e60b-4c6b-80b8-4505896c39bd" },
+                    { 2, new DateOnly(2023, 5, 7), "Ann Fay", 10, 5, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9940)), "4d836559-4e5e-4cc9-acef-646fd8021516" },
+                    { 3, new DateOnly(2023, 5, 7), "Ken Sim", 10, 6, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9950)), "124e9daf-a8eb-4a37-84ff-5d7665b123ee" },
+                    { 4, new DateOnly(2023, 5, 7), "Joe Sun", 10, 9, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9950)), "ac5e5228-194c-4720-97e2-444894ce236c" },
+                    { 5, new DateOnly(2023, 5, 7), "Sue Fox", 10, 4, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9950)), "c68d3cc6-03b3-4e36-a04d-a59963193331" },
+                    { 6, new DateOnly(2023, 5, 7), "Ben Ray", 10, 7, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9960)), "4946a047-34d7-468a-af10-320d75236f06" },
+                    { 7, new DateOnly(2023, 5, 7), "Zoe Cox", 10, 4, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9960)), "a5764069-19e4-47ff-802b-bf16bab84ff5" },
+                    { 8, new DateOnly(2023, 5, 7), "Sam Ray", 10, 10, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9970)), "0912c6cf-337c-45ba-a36f-0d8755c4b1d0" },
+                    { 9, new DateOnly(2023, 5, 7), "Dan Ash", 10, 8, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9970)), "efbc601f-cfc6-4071-8884-0c9f5778cc30" },
+                    { 10, new DateOnly(2023, 5, 7), "Pat Day", 10, 6, new TimeOnly(15, 45, 46, 561).Add(TimeSpan.FromTicks(9970)), "6dff6a08-b48d-4d45-8d82-cf88c3a8f2cc" }
                 });
 
             migrationBuilder.InsertData(
