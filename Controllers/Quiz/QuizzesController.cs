@@ -8,10 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using ApiPool.Data;
 using ApiPool.Models.Quiz;
 using ApiPool.Models.Utils;
+using Microsoft.AspNetCore.Cors;
 
 namespace ApiPool.Controllers.Quiz
 {
     [Route("api/[controller]")]
+    [EnableCors("ApiPolicy")]
     [ApiController]
     public class QuizzesController : ControllerBase
     {
