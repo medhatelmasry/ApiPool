@@ -23,6 +23,17 @@ namespace ApiPool.Controllers.Students
             _context = context;
         }
 
+        // add a route /api/students/schools that displays the distinct schools of the students
+        [HttpGet("schools")]
+        public async Task<ActionResult<IEnumerable<string?>>> GetSchools()
+        {
+            return await _context.Students
+            .Select(_ => _.School)
+            .Distinct()
+            .OrderBy(_ => _)    
+            .ToListAsync();
+        }
+
         // GET: api/Students
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
