@@ -30,7 +30,7 @@ namespace ApiPool.Controllers.Students
             return await _context.Students
             .Select(_ => _.School)
             .Distinct()
-            .OrderBy(_ => _)    
+            .OrderBy(_ => _)
             .ToListAsync();
         }
 
@@ -63,9 +63,7 @@ namespace ApiPool.Controllers.Students
         public async Task<IActionResult> PutStudent(int id, Student student)
         {
             if (id != student.StudentId)
-            {
                 return BadRequest();
-            }
 
             _context.Entry(student).State = EntityState.Modified;
 
